@@ -22,7 +22,7 @@ model Profile {
   email    String @db.Text
 
   servers  Server[]
-  members  Member[]
+  members  Members[]
   channels Channel[]
 
   createdAt DateTime @default(now())
@@ -38,7 +38,7 @@ model Server {
   profileId String
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
-  member   Member[]
+  member   Members[]
   channels Channel[]
 
   createdAt DateTime @default(now())
@@ -53,7 +53,7 @@ enum MemberRole {
   GUEST
 }
 
-model Member {
+model Members {
   id   String     @id @default(uuid())
   role MemberRole @default(GUEST)
 
@@ -109,7 +109,7 @@ model Message {
   channel   Channel @relation(fields: [channelId], references: [id])
 
   memberId String
-  member   Member @relation(fields: [memberId], references: [id])
+  member   Members @relation(fields: [memberId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -122,10 +122,10 @@ model Conversation {
   id String @id @default(uuid())
 
   memberOneId String
-  memberOne   Member @relation("MemberOne", fields: [memberOneId], references: [id], onDelete: Cascade)
+  memberOne   Members @relation("MemberOne", fields: [memberOneId], references: [id], onDelete: Cascade)
 
   memberTwoId String
-  memberTwo   Member @relation("MemberTwo", fields: [memberTwoId], references: [id], onDelete: Cascade)
+  memberTwo   Members @relation("MemberTwo", fields: [memberTwoId], references: [id], onDelete: Cascade)
 
   directMessage DirectMessage[]
 
@@ -146,7 +146,7 @@ model DirectMessage {
   conversation   Conversation @relation(fields: [conversationId], references: [id])
 
   memberId String
-  member   Member @relation(fields: [memberId], references: [id])
+  member   Members @relation(fields: [memberId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

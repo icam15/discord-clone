@@ -24,10 +24,10 @@ export type Profile = $Result.DefaultSelection<Prisma.$ProfilePayload>
  */
 export type Server = $Result.DefaultSelection<Prisma.$ServerPayload>
 /**
- * Model Member
+ * Model Members
  * 
  */
-export type Member = $Result.DefaultSelection<Prisma.$MemberPayload>
+export type Members = $Result.DefaultSelection<Prisma.$MembersPayload>
 /**
  * Model Channel
  * 
@@ -226,14 +226,14 @@ export class PrismaClient<
   get server(): Prisma.ServerDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.member`: Exposes CRUD operations for the **Member** model.
+   * `prisma.members`: Exposes CRUD operations for the **Members** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Members
-    * const members = await prisma.member.findMany()
+    * const members = await prisma.members.findMany()
     * ```
     */
-  get member(): Prisma.MemberDelegate<ExtArgs, ClientOptions>;
+  get members(): Prisma.MembersDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.channel`: Exposes CRUD operations for the **Channel** model.
@@ -716,7 +716,7 @@ export namespace Prisma {
   export const ModelName: {
     Profile: 'Profile',
     Server: 'Server',
-    Member: 'Member',
+    Members: 'Members',
     Channel: 'Channel',
     Message: 'Message',
     Conversation: 'Conversation',
@@ -739,7 +739,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "profile" | "server" | "member" | "channel" | "message" | "conversation" | "directMessage"
+      modelProps: "profile" | "server" | "members" | "channel" | "message" | "conversation" | "directMessage"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -891,77 +891,77 @@ export namespace Prisma {
           }
         }
       }
-      Member: {
-        payload: Prisma.$MemberPayload<ExtArgs>
-        fields: Prisma.MemberFieldRefs
+      Members: {
+        payload: Prisma.$MembersPayload<ExtArgs>
+        fields: Prisma.MembersFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.MemberFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload> | null
+            args: Prisma.MembersFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.MemberFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>
+            args: Prisma.MembersFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>
           }
           findFirst: {
-            args: Prisma.MemberFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload> | null
+            args: Prisma.MembersFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.MemberFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>
+            args: Prisma.MembersFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>
           }
           findMany: {
-            args: Prisma.MemberFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>[]
+            args: Prisma.MembersFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>[]
           }
           create: {
-            args: Prisma.MemberCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>
+            args: Prisma.MembersCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>
           }
           createMany: {
-            args: Prisma.MemberCreateManyArgs<ExtArgs>
+            args: Prisma.MembersCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.MemberCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>[]
+            args: Prisma.MembersCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>[]
           }
           delete: {
-            args: Prisma.MemberDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>
+            args: Prisma.MembersDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>
           }
           update: {
-            args: Prisma.MemberUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>
+            args: Prisma.MembersUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>
           }
           deleteMany: {
-            args: Prisma.MemberDeleteManyArgs<ExtArgs>
+            args: Prisma.MembersDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.MemberUpdateManyArgs<ExtArgs>
+            args: Prisma.MembersUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.MemberUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>[]
+            args: Prisma.MembersUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>[]
           }
           upsert: {
-            args: Prisma.MemberUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$MemberPayload>
+            args: Prisma.MembersUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembersPayload>
           }
           aggregate: {
-            args: Prisma.MemberAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateMember>
+            args: Prisma.MembersAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMembers>
           }
           groupBy: {
-            args: Prisma.MemberGroupByArgs<ExtArgs>
-            result: $Utils.Optional<MemberGroupByOutputType>[]
+            args: Prisma.MembersGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MembersGroupByOutputType>[]
           }
           count: {
-            args: Prisma.MemberCountArgs<ExtArgs>
-            result: $Utils.Optional<MemberCountAggregateOutputType> | number
+            args: Prisma.MembersCountArgs<ExtArgs>
+            result: $Utils.Optional<MembersCountAggregateOutputType> | number
           }
         }
       }
@@ -1347,7 +1347,7 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     profile?: ProfileOmit
     server?: ServerOmit
-    member?: MemberOmit
+    members?: MembersOmit
     channel?: ChannelOmit
     message?: MessageOmit
     conversation?: ConversationOmit
@@ -1479,7 +1479,7 @@ export namespace Prisma {
    * ProfileCountOutputType without action
    */
   export type ProfileCountOutputTypeCountMembersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MemberWhereInput
+    where?: MembersWhereInput
   }
 
   /**
@@ -1519,7 +1519,7 @@ export namespace Prisma {
    * ServerCountOutputType without action
    */
   export type ServerCountOutputTypeCountMemberArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MemberWhereInput
+    where?: MembersWhereInput
   }
 
   /**
@@ -1531,59 +1531,59 @@ export namespace Prisma {
 
 
   /**
-   * Count Type MemberCountOutputType
+   * Count Type MembersCountOutputType
    */
 
-  export type MemberCountOutputType = {
+  export type MembersCountOutputType = {
     messages: number
     directMessage: number
     conversationsInitiated: number
     conversationsReceived: number
   }
 
-  export type MemberCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    messages?: boolean | MemberCountOutputTypeCountMessagesArgs
-    directMessage?: boolean | MemberCountOutputTypeCountDirectMessageArgs
-    conversationsInitiated?: boolean | MemberCountOutputTypeCountConversationsInitiatedArgs
-    conversationsReceived?: boolean | MemberCountOutputTypeCountConversationsReceivedArgs
+  export type MembersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    messages?: boolean | MembersCountOutputTypeCountMessagesArgs
+    directMessage?: boolean | MembersCountOutputTypeCountDirectMessageArgs
+    conversationsInitiated?: boolean | MembersCountOutputTypeCountConversationsInitiatedArgs
+    conversationsReceived?: boolean | MembersCountOutputTypeCountConversationsReceivedArgs
   }
 
   // Custom InputTypes
   /**
-   * MemberCountOutputType without action
+   * MembersCountOutputType without action
    */
-  export type MemberCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the MemberCountOutputType
+     * Select specific fields to fetch from the MembersCountOutputType
      */
-    select?: MemberCountOutputTypeSelect<ExtArgs> | null
+    select?: MembersCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * MemberCountOutputType without action
+   * MembersCountOutputType without action
    */
-  export type MemberCountOutputTypeCountMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCountOutputTypeCountMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: MessageWhereInput
   }
 
   /**
-   * MemberCountOutputType without action
+   * MembersCountOutputType without action
    */
-  export type MemberCountOutputTypeCountDirectMessageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCountOutputTypeCountDirectMessageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: DirectMessageWhereInput
   }
 
   /**
-   * MemberCountOutputType without action
+   * MembersCountOutputType without action
    */
-  export type MemberCountOutputTypeCountConversationsInitiatedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCountOutputTypeCountConversationsInitiatedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ConversationWhereInput
   }
 
   /**
-   * MemberCountOutputType without action
+   * MembersCountOutputType without action
    */
-  export type MemberCountOutputTypeCountConversationsReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCountOutputTypeCountConversationsReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ConversationWhereInput
   }
 
@@ -1884,7 +1884,7 @@ export namespace Prisma {
     name: "Profile"
     objects: {
       servers: Prisma.$ServerPayload<ExtArgs>[]
-      members: Prisma.$MemberPayload<ExtArgs>[]
+      members: Prisma.$MembersPayload<ExtArgs>[]
       channels: Prisma.$ChannelPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -2290,7 +2290,7 @@ export namespace Prisma {
   export interface Prisma__ProfileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     servers<T extends Profile$serversArgs<ExtArgs> = {}>(args?: Subset<T, Profile$serversArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ServerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    members<T extends Profile$membersArgs<ExtArgs> = {}>(args?: Subset<T, Profile$membersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    members<T extends Profile$membersArgs<ExtArgs> = {}>(args?: Subset<T, Profile$membersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     channels<T extends Profile$channelsArgs<ExtArgs> = {}>(args?: Subset<T, Profile$channelsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChannelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2744,23 +2744,23 @@ export namespace Prisma {
    */
   export type Profile$membersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
-    where?: MemberWhereInput
-    orderBy?: MemberOrderByWithRelationInput | MemberOrderByWithRelationInput[]
-    cursor?: MemberWhereUniqueInput
+    include?: MembersInclude<ExtArgs> | null
+    where?: MembersWhereInput
+    orderBy?: MembersOrderByWithRelationInput | MembersOrderByWithRelationInput[]
+    cursor?: MembersWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: MemberScalarFieldEnum | MemberScalarFieldEnum[]
+    distinct?: MembersScalarFieldEnum | MembersScalarFieldEnum[]
   }
 
   /**
@@ -3042,7 +3042,7 @@ export namespace Prisma {
     name: "Server"
     objects: {
       profile: Prisma.$ProfilePayload<ExtArgs>
-      member: Prisma.$MemberPayload<ExtArgs>[]
+      member: Prisma.$MembersPayload<ExtArgs>[]
       channels: Prisma.$ChannelPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -3448,7 +3448,7 @@ export namespace Prisma {
   export interface Prisma__ServerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     profile<T extends ProfileDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProfileDefaultArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    member<T extends Server$memberArgs<ExtArgs> = {}>(args?: Subset<T, Server$memberArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    member<T extends Server$memberArgs<ExtArgs> = {}>(args?: Subset<T, Server$memberArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     channels<T extends Server$channelsArgs<ExtArgs> = {}>(args?: Subset<T, Server$channelsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChannelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -3886,23 +3886,23 @@ export namespace Prisma {
    */
   export type Server$memberArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
-    where?: MemberWhereInput
-    orderBy?: MemberOrderByWithRelationInput | MemberOrderByWithRelationInput[]
-    cursor?: MemberWhereUniqueInput
+    include?: MembersInclude<ExtArgs> | null
+    where?: MembersWhereInput
+    orderBy?: MembersOrderByWithRelationInput | MembersOrderByWithRelationInput[]
+    cursor?: MembersWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: MemberScalarFieldEnum | MemberScalarFieldEnum[]
+    distinct?: MembersScalarFieldEnum | MembersScalarFieldEnum[]
   }
 
   /**
@@ -3949,16 +3949,16 @@ export namespace Prisma {
 
 
   /**
-   * Model Member
+   * Model Members
    */
 
-  export type AggregateMember = {
-    _count: MemberCountAggregateOutputType | null
-    _min: MemberMinAggregateOutputType | null
-    _max: MemberMaxAggregateOutputType | null
+  export type AggregateMembers = {
+    _count: MembersCountAggregateOutputType | null
+    _min: MembersMinAggregateOutputType | null
+    _max: MembersMaxAggregateOutputType | null
   }
 
-  export type MemberMinAggregateOutputType = {
+  export type MembersMinAggregateOutputType = {
     id: string | null
     role: $Enums.MemberRole | null
     serverId: string | null
@@ -3967,7 +3967,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type MemberMaxAggregateOutputType = {
+  export type MembersMaxAggregateOutputType = {
     id: string | null
     role: $Enums.MemberRole | null
     serverId: string | null
@@ -3976,7 +3976,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type MemberCountAggregateOutputType = {
+  export type MembersCountAggregateOutputType = {
     id: number
     role: number
     serverId: number
@@ -3987,7 +3987,7 @@ export namespace Prisma {
   }
 
 
-  export type MemberMinAggregateInputType = {
+  export type MembersMinAggregateInputType = {
     id?: true
     role?: true
     serverId?: true
@@ -3996,7 +3996,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type MemberMaxAggregateInputType = {
+  export type MembersMaxAggregateInputType = {
     id?: true
     role?: true
     serverId?: true
@@ -4005,7 +4005,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type MemberCountAggregateInputType = {
+  export type MembersCountAggregateInputType = {
     id?: true
     role?: true
     serverId?: true
@@ -4015,23 +4015,23 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type MemberAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Member to aggregate.
+     * Filter which Members to aggregate.
      */
-    where?: MemberWhereInput
+    where?: MembersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Members to fetch.
      */
-    orderBy?: MemberOrderByWithRelationInput | MemberOrderByWithRelationInput[]
+    orderBy?: MembersOrderByWithRelationInput | MembersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: MemberWhereUniqueInput
+    cursor?: MembersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -4049,71 +4049,71 @@ export namespace Prisma {
      * 
      * Count returned Members
     **/
-    _count?: true | MemberCountAggregateInputType
+    _count?: true | MembersCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: MemberMinAggregateInputType
+    _min?: MembersMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: MemberMaxAggregateInputType
+    _max?: MembersMaxAggregateInputType
   }
 
-  export type GetMemberAggregateType<T extends MemberAggregateArgs> = {
-        [P in keyof T & keyof AggregateMember]: P extends '_count' | 'count'
+  export type GetMembersAggregateType<T extends MembersAggregateArgs> = {
+        [P in keyof T & keyof AggregateMembers]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateMember[P]>
-      : GetScalarType<T[P], AggregateMember[P]>
+        : GetScalarType<T[P], AggregateMembers[P]>
+      : GetScalarType<T[P], AggregateMembers[P]>
   }
 
 
 
 
-  export type MemberGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: MemberWhereInput
-    orderBy?: MemberOrderByWithAggregationInput | MemberOrderByWithAggregationInput[]
-    by: MemberScalarFieldEnum[] | MemberScalarFieldEnum
-    having?: MemberScalarWhereWithAggregatesInput
+  export type MembersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MembersWhereInput
+    orderBy?: MembersOrderByWithAggregationInput | MembersOrderByWithAggregationInput[]
+    by: MembersScalarFieldEnum[] | MembersScalarFieldEnum
+    having?: MembersScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: MemberCountAggregateInputType | true
-    _min?: MemberMinAggregateInputType
-    _max?: MemberMaxAggregateInputType
+    _count?: MembersCountAggregateInputType | true
+    _min?: MembersMinAggregateInputType
+    _max?: MembersMaxAggregateInputType
   }
 
-  export type MemberGroupByOutputType = {
+  export type MembersGroupByOutputType = {
     id: string
     role: $Enums.MemberRole
     serverId: string
     profileId: string
     createdAt: Date
     updatedAt: Date
-    _count: MemberCountAggregateOutputType | null
-    _min: MemberMinAggregateOutputType | null
-    _max: MemberMaxAggregateOutputType | null
+    _count: MembersCountAggregateOutputType | null
+    _min: MembersMinAggregateOutputType | null
+    _max: MembersMaxAggregateOutputType | null
   }
 
-  type GetMemberGroupByPayload<T extends MemberGroupByArgs> = Prisma.PrismaPromise<
+  type GetMembersGroupByPayload<T extends MembersGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<MemberGroupByOutputType, T['by']> &
+      PickEnumerable<MembersGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof MemberGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof MembersGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], MemberGroupByOutputType[P]>
-            : GetScalarType<T[P], MemberGroupByOutputType[P]>
+              : GetScalarType<T[P], MembersGroupByOutputType[P]>
+            : GetScalarType<T[P], MembersGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type MemberSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MembersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     role?: boolean
     serverId?: boolean
@@ -4122,14 +4122,14 @@ export namespace Prisma {
     updatedAt?: boolean
     server?: boolean | ServerDefaultArgs<ExtArgs>
     profile?: boolean | ProfileDefaultArgs<ExtArgs>
-    messages?: boolean | Member$messagesArgs<ExtArgs>
-    directMessage?: boolean | Member$directMessageArgs<ExtArgs>
-    conversationsInitiated?: boolean | Member$conversationsInitiatedArgs<ExtArgs>
-    conversationsReceived?: boolean | Member$conversationsReceivedArgs<ExtArgs>
-    _count?: boolean | MemberCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["member"]>
+    messages?: boolean | Members$messagesArgs<ExtArgs>
+    directMessage?: boolean | Members$directMessageArgs<ExtArgs>
+    conversationsInitiated?: boolean | Members$conversationsInitiatedArgs<ExtArgs>
+    conversationsReceived?: boolean | Members$conversationsReceivedArgs<ExtArgs>
+    _count?: boolean | MembersCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["members"]>
 
-  export type MemberSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MembersSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     role?: boolean
     serverId?: boolean
@@ -4138,9 +4138,9 @@ export namespace Prisma {
     updatedAt?: boolean
     server?: boolean | ServerDefaultArgs<ExtArgs>
     profile?: boolean | ProfileDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["member"]>
+  }, ExtArgs["result"]["members"]>
 
-  export type MemberSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MembersSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     role?: boolean
     serverId?: boolean
@@ -4149,9 +4149,9 @@ export namespace Prisma {
     updatedAt?: boolean
     server?: boolean | ServerDefaultArgs<ExtArgs>
     profile?: boolean | ProfileDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["member"]>
+  }, ExtArgs["result"]["members"]>
 
-  export type MemberSelectScalar = {
+  export type MembersSelectScalar = {
     id?: boolean
     role?: boolean
     serverId?: boolean
@@ -4160,27 +4160,27 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type MemberOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "role" | "serverId" | "profileId" | "createdAt" | "updatedAt", ExtArgs["result"]["member"]>
-  export type MemberInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "role" | "serverId" | "profileId" | "createdAt" | "updatedAt", ExtArgs["result"]["members"]>
+  export type MembersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     server?: boolean | ServerDefaultArgs<ExtArgs>
     profile?: boolean | ProfileDefaultArgs<ExtArgs>
-    messages?: boolean | Member$messagesArgs<ExtArgs>
-    directMessage?: boolean | Member$directMessageArgs<ExtArgs>
-    conversationsInitiated?: boolean | Member$conversationsInitiatedArgs<ExtArgs>
-    conversationsReceived?: boolean | Member$conversationsReceivedArgs<ExtArgs>
-    _count?: boolean | MemberCountOutputTypeDefaultArgs<ExtArgs>
+    messages?: boolean | Members$messagesArgs<ExtArgs>
+    directMessage?: boolean | Members$directMessageArgs<ExtArgs>
+    conversationsInitiated?: boolean | Members$conversationsInitiatedArgs<ExtArgs>
+    conversationsReceived?: boolean | Members$conversationsReceivedArgs<ExtArgs>
+    _count?: boolean | MembersCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type MemberIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     server?: boolean | ServerDefaultArgs<ExtArgs>
     profile?: boolean | ProfileDefaultArgs<ExtArgs>
   }
-  export type MemberIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     server?: boolean | ServerDefaultArgs<ExtArgs>
     profile?: boolean | ProfileDefaultArgs<ExtArgs>
   }
 
-  export type $MemberPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Member"
+  export type $MembersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Members"
     objects: {
       server: Prisma.$ServerPayload<ExtArgs>
       profile: Prisma.$ProfilePayload<ExtArgs>
@@ -4196,136 +4196,136 @@ export namespace Prisma {
       profileId: string
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["member"]>
+    }, ExtArgs["result"]["members"]>
     composites: {}
   }
 
-  type MemberGetPayload<S extends boolean | null | undefined | MemberDefaultArgs> = $Result.GetResult<Prisma.$MemberPayload, S>
+  type MembersGetPayload<S extends boolean | null | undefined | MembersDefaultArgs> = $Result.GetResult<Prisma.$MembersPayload, S>
 
-  type MemberCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<MemberFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: MemberCountAggregateInputType | true
+  type MembersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MembersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MembersCountAggregateInputType | true
     }
 
-  export interface MemberDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Member'], meta: { name: 'Member' } }
+  export interface MembersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Members'], meta: { name: 'Members' } }
     /**
-     * Find zero or one Member that matches the filter.
-     * @param {MemberFindUniqueArgs} args - Arguments to find a Member
+     * Find zero or one Members that matches the filter.
+     * @param {MembersFindUniqueArgs} args - Arguments to find a Members
      * @example
-     * // Get one Member
-     * const member = await prisma.member.findUnique({
+     * // Get one Members
+     * const members = await prisma.members.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends MemberFindUniqueArgs>(args: SelectSubset<T, MemberFindUniqueArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends MembersFindUniqueArgs>(args: SelectSubset<T, MembersFindUniqueArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Member that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Members that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {MemberFindUniqueOrThrowArgs} args - Arguments to find a Member
+     * @param {MembersFindUniqueOrThrowArgs} args - Arguments to find a Members
      * @example
-     * // Get one Member
-     * const member = await prisma.member.findUniqueOrThrow({
+     * // Get one Members
+     * const members = await prisma.members.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends MemberFindUniqueOrThrowArgs>(args: SelectSubset<T, MemberFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends MembersFindUniqueOrThrowArgs>(args: SelectSubset<T, MembersFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Member that matches the filter.
+     * Find the first Members that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MemberFindFirstArgs} args - Arguments to find a Member
+     * @param {MembersFindFirstArgs} args - Arguments to find a Members
      * @example
-     * // Get one Member
-     * const member = await prisma.member.findFirst({
+     * // Get one Members
+     * const members = await prisma.members.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends MemberFindFirstArgs>(args?: SelectSubset<T, MemberFindFirstArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends MembersFindFirstArgs>(args?: SelectSubset<T, MembersFindFirstArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Member that matches the filter or
+     * Find the first Members that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MemberFindFirstOrThrowArgs} args - Arguments to find a Member
+     * @param {MembersFindFirstOrThrowArgs} args - Arguments to find a Members
      * @example
-     * // Get one Member
-     * const member = await prisma.member.findFirstOrThrow({
+     * // Get one Members
+     * const members = await prisma.members.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends MemberFindFirstOrThrowArgs>(args?: SelectSubset<T, MemberFindFirstOrThrowArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends MembersFindFirstOrThrowArgs>(args?: SelectSubset<T, MembersFindFirstOrThrowArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Members that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MemberFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {MembersFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Members
-     * const members = await prisma.member.findMany()
+     * const members = await prisma.members.findMany()
      * 
      * // Get first 10 Members
-     * const members = await prisma.member.findMany({ take: 10 })
+     * const members = await prisma.members.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const memberWithIdOnly = await prisma.member.findMany({ select: { id: true } })
+     * const membersWithIdOnly = await prisma.members.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends MemberFindManyArgs>(args?: SelectSubset<T, MemberFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends MembersFindManyArgs>(args?: SelectSubset<T, MembersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Member.
-     * @param {MemberCreateArgs} args - Arguments to create a Member.
+     * Create a Members.
+     * @param {MembersCreateArgs} args - Arguments to create a Members.
      * @example
-     * // Create one Member
-     * const Member = await prisma.member.create({
+     * // Create one Members
+     * const Members = await prisma.members.create({
      *   data: {
-     *     // ... data to create a Member
+     *     // ... data to create a Members
      *   }
      * })
      * 
      */
-    create<T extends MemberCreateArgs>(args: SelectSubset<T, MemberCreateArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends MembersCreateArgs>(args: SelectSubset<T, MembersCreateArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Members.
-     * @param {MemberCreateManyArgs} args - Arguments to create many Members.
+     * @param {MembersCreateManyArgs} args - Arguments to create many Members.
      * @example
      * // Create many Members
-     * const member = await prisma.member.createMany({
+     * const members = await prisma.members.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends MemberCreateManyArgs>(args?: SelectSubset<T, MemberCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends MembersCreateManyArgs>(args?: SelectSubset<T, MembersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Members and returns the data saved in the database.
-     * @param {MemberCreateManyAndReturnArgs} args - Arguments to create many Members.
+     * @param {MembersCreateManyAndReturnArgs} args - Arguments to create many Members.
      * @example
      * // Create many Members
-     * const member = await prisma.member.createManyAndReturn({
+     * const members = await prisma.members.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
      * // Create many Members and only return the `id`
-     * const memberWithIdOnly = await prisma.member.createManyAndReturn({
+     * const membersWithIdOnly = await prisma.members.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -4335,28 +4335,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends MemberCreateManyAndReturnArgs>(args?: SelectSubset<T, MemberCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends MembersCreateManyAndReturnArgs>(args?: SelectSubset<T, MembersCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Member.
-     * @param {MemberDeleteArgs} args - Arguments to delete one Member.
+     * Delete a Members.
+     * @param {MembersDeleteArgs} args - Arguments to delete one Members.
      * @example
-     * // Delete one Member
-     * const Member = await prisma.member.delete({
+     * // Delete one Members
+     * const Members = await prisma.members.delete({
      *   where: {
-     *     // ... filter to delete one Member
+     *     // ... filter to delete one Members
      *   }
      * })
      * 
      */
-    delete<T extends MemberDeleteArgs>(args: SelectSubset<T, MemberDeleteArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends MembersDeleteArgs>(args: SelectSubset<T, MembersDeleteArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Member.
-     * @param {MemberUpdateArgs} args - Arguments to update one Member.
+     * Update one Members.
+     * @param {MembersUpdateArgs} args - Arguments to update one Members.
      * @example
-     * // Update one Member
-     * const member = await prisma.member.update({
+     * // Update one Members
+     * const members = await prisma.members.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4366,30 +4366,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends MemberUpdateArgs>(args: SelectSubset<T, MemberUpdateArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends MembersUpdateArgs>(args: SelectSubset<T, MembersUpdateArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Members.
-     * @param {MemberDeleteManyArgs} args - Arguments to filter Members to delete.
+     * @param {MembersDeleteManyArgs} args - Arguments to filter Members to delete.
      * @example
      * // Delete a few Members
-     * const { count } = await prisma.member.deleteMany({
+     * const { count } = await prisma.members.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends MemberDeleteManyArgs>(args?: SelectSubset<T, MemberDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends MembersDeleteManyArgs>(args?: SelectSubset<T, MembersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Members.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MemberUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {MembersUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Members
-     * const member = await prisma.member.updateMany({
+     * const members = await prisma.members.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4399,14 +4399,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends MemberUpdateManyArgs>(args: SelectSubset<T, MemberUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends MembersUpdateManyArgs>(args: SelectSubset<T, MembersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Members and returns the data updated in the database.
-     * @param {MemberUpdateManyAndReturnArgs} args - Arguments to update many Members.
+     * @param {MembersUpdateManyAndReturnArgs} args - Arguments to update many Members.
      * @example
      * // Update many Members
-     * const member = await prisma.member.updateManyAndReturn({
+     * const members = await prisma.members.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4416,7 +4416,7 @@ export namespace Prisma {
      * })
      * 
      * // Update zero or more Members and only return the `id`
-     * const memberWithIdOnly = await prisma.member.updateManyAndReturn({
+     * const membersWithIdOnly = await prisma.members.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -4429,56 +4429,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends MemberUpdateManyAndReturnArgs>(args: SelectSubset<T, MemberUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends MembersUpdateManyAndReturnArgs>(args: SelectSubset<T, MembersUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Member.
-     * @param {MemberUpsertArgs} args - Arguments to update or create a Member.
+     * Create or update one Members.
+     * @param {MembersUpsertArgs} args - Arguments to update or create a Members.
      * @example
-     * // Update or create a Member
-     * const member = await prisma.member.upsert({
+     * // Update or create a Members
+     * const members = await prisma.members.upsert({
      *   create: {
-     *     // ... data to create a Member
+     *     // ... data to create a Members
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Member we want to update
+     *     // ... the filter for the Members we want to update
      *   }
      * })
      */
-    upsert<T extends MemberUpsertArgs>(args: SelectSubset<T, MemberUpsertArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends MembersUpsertArgs>(args: SelectSubset<T, MembersUpsertArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Members.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MemberCountArgs} args - Arguments to filter Members to count.
+     * @param {MembersCountArgs} args - Arguments to filter Members to count.
      * @example
      * // Count the number of Members
-     * const count = await prisma.member.count({
+     * const count = await prisma.members.count({
      *   where: {
      *     // ... the filter for the Members we want to count
      *   }
      * })
     **/
-    count<T extends MemberCountArgs>(
-      args?: Subset<T, MemberCountArgs>,
+    count<T extends MembersCountArgs>(
+      args?: Subset<T, MembersCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], MemberCountAggregateOutputType>
+          : GetScalarType<T['select'], MembersCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Member.
+     * Allows you to perform aggregations operations on a Members.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MemberAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {MembersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -4498,13 +4498,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends MemberAggregateArgs>(args: Subset<T, MemberAggregateArgs>): Prisma.PrismaPromise<GetMemberAggregateType<T>>
+    aggregate<T extends MembersAggregateArgs>(args: Subset<T, MembersAggregateArgs>): Prisma.PrismaPromise<GetMembersAggregateType<T>>
 
     /**
-     * Group by Member.
+     * Group by Members.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {MemberGroupByArgs} args - Group by arguments.
+     * @param {MembersGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4519,14 +4519,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends MemberGroupByArgs,
+      T extends MembersGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: MemberGroupByArgs['orderBy'] }
-        : { orderBy?: MemberGroupByArgs['orderBy'] },
+        ? { orderBy: MembersGroupByArgs['orderBy'] }
+        : { orderBy?: MembersGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4575,27 +4575,27 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, MemberGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMemberGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, MembersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMembersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Member model
+   * Fields of the Members model
    */
-  readonly fields: MemberFieldRefs;
+  readonly fields: MembersFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Member.
+   * The delegate class that acts as a "Promise-like" for Members.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__MemberClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__MembersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     server<T extends ServerDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ServerDefaultArgs<ExtArgs>>): Prisma__ServerClient<$Result.GetResult<Prisma.$ServerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     profile<T extends ProfileDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProfileDefaultArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    messages<T extends Member$messagesArgs<ExtArgs> = {}>(args?: Subset<T, Member$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    directMessage<T extends Member$directMessageArgs<ExtArgs> = {}>(args?: Subset<T, Member$directMessageArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DirectMessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    conversationsInitiated<T extends Member$conversationsInitiatedArgs<ExtArgs> = {}>(args?: Subset<T, Member$conversationsInitiatedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    conversationsReceived<T extends Member$conversationsReceivedArgs<ExtArgs> = {}>(args?: Subset<T, Member$conversationsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    messages<T extends Members$messagesArgs<ExtArgs> = {}>(args?: Subset<T, Members$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    directMessage<T extends Members$directMessageArgs<ExtArgs> = {}>(args?: Subset<T, Members$directMessageArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DirectMessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    conversationsInitiated<T extends Members$conversationsInitiatedArgs<ExtArgs> = {}>(args?: Subset<T, Members$conversationsInitiatedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    conversationsReceived<T extends Members$conversationsReceivedArgs<ExtArgs> = {}>(args?: Subset<T, Members$conversationsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4622,199 +4622,199 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Member model
+   * Fields of the Members model
    */
-  interface MemberFieldRefs {
-    readonly id: FieldRef<"Member", 'String'>
-    readonly role: FieldRef<"Member", 'MemberRole'>
-    readonly serverId: FieldRef<"Member", 'String'>
-    readonly profileId: FieldRef<"Member", 'String'>
-    readonly createdAt: FieldRef<"Member", 'DateTime'>
-    readonly updatedAt: FieldRef<"Member", 'DateTime'>
+  interface MembersFieldRefs {
+    readonly id: FieldRef<"Members", 'String'>
+    readonly role: FieldRef<"Members", 'MemberRole'>
+    readonly serverId: FieldRef<"Members", 'String'>
+    readonly profileId: FieldRef<"Members", 'String'>
+    readonly createdAt: FieldRef<"Members", 'DateTime'>
+    readonly updatedAt: FieldRef<"Members", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Member findUnique
+   * Members findUnique
    */
-  export type MemberFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
-    /**
-     * Filter, which Member to fetch.
-     */
-    where: MemberWhereUniqueInput
-  }
-
-  /**
-   * Member findUniqueOrThrow
-   */
-  export type MemberFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Member
-     */
-    select?: MemberSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Member
-     */
-    omit?: MemberOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: MemberInclude<ExtArgs> | null
-    /**
-     * Filter, which Member to fetch.
-     */
-    where: MemberWhereUniqueInput
-  }
-
-  /**
-   * Member findFirst
-   */
-  export type MemberFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Member
-     */
-    select?: MemberSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Member
-     */
-    omit?: MemberOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: MemberInclude<ExtArgs> | null
-    /**
-     * Filter, which Member to fetch.
-     */
-    where?: MemberWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Members to fetch.
-     */
-    orderBy?: MemberOrderByWithRelationInput | MemberOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Members.
-     */
-    cursor?: MemberWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Members from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Members.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Members.
-     */
-    distinct?: MemberScalarFieldEnum | MemberScalarFieldEnum[]
-  }
-
-  /**
-   * Member findFirstOrThrow
-   */
-  export type MemberFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Member
-     */
-    select?: MemberSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Member
-     */
-    omit?: MemberOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: MemberInclude<ExtArgs> | null
-    /**
-     * Filter, which Member to fetch.
-     */
-    where?: MemberWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Members to fetch.
-     */
-    orderBy?: MemberOrderByWithRelationInput | MemberOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Members.
-     */
-    cursor?: MemberWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Members from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Members.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Members.
-     */
-    distinct?: MemberScalarFieldEnum | MemberScalarFieldEnum[]
-  }
-
-  /**
-   * Member findMany
-   */
-  export type MemberFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Member
-     */
-    select?: MemberSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Member
-     */
-    omit?: MemberOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: MemberInclude<ExtArgs> | null
+    include?: MembersInclude<ExtArgs> | null
     /**
      * Filter, which Members to fetch.
      */
-    where?: MemberWhereInput
+    where: MembersWhereUniqueInput
+  }
+
+  /**
+   * Members findUniqueOrThrow
+   */
+  export type MembersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Members
+     */
+    select?: MembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Members
+     */
+    omit?: MembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MembersInclude<ExtArgs> | null
+    /**
+     * Filter, which Members to fetch.
+     */
+    where: MembersWhereUniqueInput
+  }
+
+  /**
+   * Members findFirst
+   */
+  export type MembersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Members
+     */
+    select?: MembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Members
+     */
+    omit?: MembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MembersInclude<ExtArgs> | null
+    /**
+     * Filter, which Members to fetch.
+     */
+    where?: MembersWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Members to fetch.
      */
-    orderBy?: MemberOrderByWithRelationInput | MemberOrderByWithRelationInput[]
+    orderBy?: MembersOrderByWithRelationInput | MembersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Members.
+     */
+    cursor?: MembersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Members from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Members.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Members.
+     */
+    distinct?: MembersScalarFieldEnum | MembersScalarFieldEnum[]
+  }
+
+  /**
+   * Members findFirstOrThrow
+   */
+  export type MembersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Members
+     */
+    select?: MembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Members
+     */
+    omit?: MembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MembersInclude<ExtArgs> | null
+    /**
+     * Filter, which Members to fetch.
+     */
+    where?: MembersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Members to fetch.
+     */
+    orderBy?: MembersOrderByWithRelationInput | MembersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Members.
+     */
+    cursor?: MembersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Members from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Members.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Members.
+     */
+    distinct?: MembersScalarFieldEnum | MembersScalarFieldEnum[]
+  }
+
+  /**
+   * Members findMany
+   */
+  export type MembersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Members
+     */
+    select?: MembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Members
+     */
+    omit?: MembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MembersInclude<ExtArgs> | null
+    /**
+     * Filter, which Members to fetch.
+     */
+    where?: MembersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Members to fetch.
+     */
+    orderBy?: MembersOrderByWithRelationInput | MembersOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for listing Members.
      */
-    cursor?: MemberWhereUniqueInput
+    cursor?: MembersWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -4827,103 +4827,103 @@ export namespace Prisma {
      * Skip the first `n` Members.
      */
     skip?: number
-    distinct?: MemberScalarFieldEnum | MemberScalarFieldEnum[]
+    distinct?: MembersScalarFieldEnum | MembersScalarFieldEnum[]
   }
 
   /**
-   * Member create
+   * Members create
    */
-  export type MemberCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
+    include?: MembersInclude<ExtArgs> | null
     /**
-     * The data needed to create a Member.
+     * The data needed to create a Members.
      */
-    data: XOR<MemberCreateInput, MemberUncheckedCreateInput>
+    data: XOR<MembersCreateInput, MembersUncheckedCreateInput>
   }
 
   /**
-   * Member createMany
+   * Members createMany
    */
-  export type MemberCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to create many Members.
      */
-    data: MemberCreateManyInput | MemberCreateManyInput[]
+    data: MembersCreateManyInput | MembersCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Member createManyAndReturn
+   * Members createManyAndReturn
    */
-  export type MemberCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelectCreateManyAndReturn<ExtArgs> | null
+    select?: MembersSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * The data used to create many Members.
      */
-    data: MemberCreateManyInput | MemberCreateManyInput[]
+    data: MembersCreateManyInput | MembersCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: MembersIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Member update
+   * Members update
    */
-  export type MemberUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
+    include?: MembersInclude<ExtArgs> | null
     /**
-     * The data needed to update a Member.
+     * The data needed to update a Members.
      */
-    data: XOR<MemberUpdateInput, MemberUncheckedUpdateInput>
+    data: XOR<MembersUpdateInput, MembersUncheckedUpdateInput>
     /**
-     * Choose, which Member to update.
+     * Choose, which Members to update.
      */
-    where: MemberWhereUniqueInput
+    where: MembersWhereUniqueInput
   }
 
   /**
-   * Member updateMany
+   * Members updateMany
    */
-  export type MemberUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to update Members.
      */
-    data: XOR<MemberUpdateManyMutationInput, MemberUncheckedUpdateManyInput>
+    data: XOR<MembersUpdateManyMutationInput, MembersUncheckedUpdateManyInput>
     /**
      * Filter which Members to update
      */
-    where?: MemberWhereInput
+    where?: MembersWhereInput
     /**
      * Limit how many Members to update.
      */
@@ -4931,25 +4931,25 @@ export namespace Prisma {
   }
 
   /**
-   * Member updateManyAndReturn
+   * Members updateManyAndReturn
    */
-  export type MemberUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: MembersSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * The data used to update Members.
      */
-    data: XOR<MemberUpdateManyMutationInput, MemberUncheckedUpdateManyInput>
+    data: XOR<MembersUpdateManyMutationInput, MembersUncheckedUpdateManyInput>
     /**
      * Filter which Members to update
      */
-    where?: MemberWhereInput
+    where?: MembersWhereInput
     /**
      * Limit how many Members to update.
      */
@@ -4957,69 +4957,69 @@ export namespace Prisma {
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: MembersIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Member upsert
+   * Members upsert
    */
-  export type MemberUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
+    include?: MembersInclude<ExtArgs> | null
     /**
-     * The filter to search for the Member to update in case it exists.
+     * The filter to search for the Members to update in case it exists.
      */
-    where: MemberWhereUniqueInput
+    where: MembersWhereUniqueInput
     /**
-     * In case the Member found by the `where` argument doesn't exist, create a new Member with this data.
+     * In case the Members found by the `where` argument doesn't exist, create a new Members with this data.
      */
-    create: XOR<MemberCreateInput, MemberUncheckedCreateInput>
+    create: XOR<MembersCreateInput, MembersUncheckedCreateInput>
     /**
-     * In case the Member was found with the provided `where` argument, update it with this data.
+     * In case the Members was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<MemberUpdateInput, MemberUncheckedUpdateInput>
+    update: XOR<MembersUpdateInput, MembersUncheckedUpdateInput>
   }
 
   /**
-   * Member delete
+   * Members delete
    */
-  export type MemberDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
+    include?: MembersInclude<ExtArgs> | null
     /**
-     * Filter which Member to delete.
+     * Filter which Members to delete.
      */
-    where: MemberWhereUniqueInput
+    where: MembersWhereUniqueInput
   }
 
   /**
-   * Member deleteMany
+   * Members deleteMany
    */
-  export type MemberDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Filter which Members to delete
      */
-    where?: MemberWhereInput
+    where?: MembersWhereInput
     /**
      * Limit how many Members to delete.
      */
@@ -5027,9 +5027,9 @@ export namespace Prisma {
   }
 
   /**
-   * Member.messages
+   * Members.messages
    */
-  export type Member$messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Members$messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Message
      */
@@ -5051,9 +5051,9 @@ export namespace Prisma {
   }
 
   /**
-   * Member.directMessage
+   * Members.directMessage
    */
-  export type Member$directMessageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Members$directMessageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the DirectMessage
      */
@@ -5075,9 +5075,9 @@ export namespace Prisma {
   }
 
   /**
-   * Member.conversationsInitiated
+   * Members.conversationsInitiated
    */
-  export type Member$conversationsInitiatedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Members$conversationsInitiatedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Conversation
      */
@@ -5099,9 +5099,9 @@ export namespace Prisma {
   }
 
   /**
-   * Member.conversationsReceived
+   * Members.conversationsReceived
    */
-  export type Member$conversationsReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Members$conversationsReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Conversation
      */
@@ -5123,21 +5123,21 @@ export namespace Prisma {
   }
 
   /**
-   * Member without action
+   * Members without action
    */
-  export type MemberDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Member
+     * Select specific fields to fetch from the Members
      */
-    select?: MemberSelect<ExtArgs> | null
+    select?: MembersSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Member
+     * Omit specific fields from the Members
      */
-    omit?: MemberOmit<ExtArgs> | null
+    omit?: MembersOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: MemberInclude<ExtArgs> | null
+    include?: MembersInclude<ExtArgs> | null
   }
 
 
@@ -6452,7 +6452,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     channel?: boolean | ChannelDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["message"]>
 
   export type MessageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -6465,7 +6465,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     channel?: boolean | ChannelDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["message"]>
 
   export type MessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -6478,7 +6478,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     channel?: boolean | ChannelDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["message"]>
 
   export type MessageSelectScalar = {
@@ -6495,22 +6495,22 @@ export namespace Prisma {
   export type MessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "content" | "deleted" | "fileUrl" | "channelId" | "memberId" | "createdAt" | "updatedAt", ExtArgs["result"]["message"]>
   export type MessageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     channel?: boolean | ChannelDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }
   export type MessageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     channel?: boolean | ChannelDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }
   export type MessageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     channel?: boolean | ChannelDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }
 
   export type $MessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Message"
     objects: {
       channel: Prisma.$ChannelPayload<ExtArgs>
-      member: Prisma.$MemberPayload<ExtArgs>
+      member: Prisma.$MembersPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -6916,7 +6916,7 @@ export namespace Prisma {
   export interface Prisma__MessageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     channel<T extends ChannelDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ChannelDefaultArgs<ExtArgs>>): Prisma__ChannelClient<$Result.GetResult<Prisma.$ChannelPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    member<T extends MemberDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MemberDefaultArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    member<T extends MembersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MembersDefaultArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7532,8 +7532,8 @@ export namespace Prisma {
     memberTwoId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    memberOne?: boolean | MemberDefaultArgs<ExtArgs>
-    memberTwo?: boolean | MemberDefaultArgs<ExtArgs>
+    memberOne?: boolean | MembersDefaultArgs<ExtArgs>
+    memberTwo?: boolean | MembersDefaultArgs<ExtArgs>
     directMessage?: boolean | Conversation$directMessageArgs<ExtArgs>
     _count?: boolean | ConversationCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["conversation"]>
@@ -7544,8 +7544,8 @@ export namespace Prisma {
     memberTwoId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    memberOne?: boolean | MemberDefaultArgs<ExtArgs>
-    memberTwo?: boolean | MemberDefaultArgs<ExtArgs>
+    memberOne?: boolean | MembersDefaultArgs<ExtArgs>
+    memberTwo?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["conversation"]>
 
   export type ConversationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -7554,8 +7554,8 @@ export namespace Prisma {
     memberTwoId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    memberOne?: boolean | MemberDefaultArgs<ExtArgs>
-    memberTwo?: boolean | MemberDefaultArgs<ExtArgs>
+    memberOne?: boolean | MembersDefaultArgs<ExtArgs>
+    memberTwo?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["conversation"]>
 
   export type ConversationSelectScalar = {
@@ -7568,25 +7568,25 @@ export namespace Prisma {
 
   export type ConversationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "memberOneId" | "memberTwoId" | "createdAt" | "updatedAt", ExtArgs["result"]["conversation"]>
   export type ConversationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    memberOne?: boolean | MemberDefaultArgs<ExtArgs>
-    memberTwo?: boolean | MemberDefaultArgs<ExtArgs>
+    memberOne?: boolean | MembersDefaultArgs<ExtArgs>
+    memberTwo?: boolean | MembersDefaultArgs<ExtArgs>
     directMessage?: boolean | Conversation$directMessageArgs<ExtArgs>
     _count?: boolean | ConversationCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ConversationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    memberOne?: boolean | MemberDefaultArgs<ExtArgs>
-    memberTwo?: boolean | MemberDefaultArgs<ExtArgs>
+    memberOne?: boolean | MembersDefaultArgs<ExtArgs>
+    memberTwo?: boolean | MembersDefaultArgs<ExtArgs>
   }
   export type ConversationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    memberOne?: boolean | MemberDefaultArgs<ExtArgs>
-    memberTwo?: boolean | MemberDefaultArgs<ExtArgs>
+    memberOne?: boolean | MembersDefaultArgs<ExtArgs>
+    memberTwo?: boolean | MembersDefaultArgs<ExtArgs>
   }
 
   export type $ConversationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Conversation"
     objects: {
-      memberOne: Prisma.$MemberPayload<ExtArgs>
-      memberTwo: Prisma.$MemberPayload<ExtArgs>
+      memberOne: Prisma.$MembersPayload<ExtArgs>
+      memberTwo: Prisma.$MembersPayload<ExtArgs>
       directMessage: Prisma.$DirectMessagePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -7989,8 +7989,8 @@ export namespace Prisma {
    */
   export interface Prisma__ConversationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    memberOne<T extends MemberDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MemberDefaultArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    memberTwo<T extends MemberDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MemberDefaultArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    memberOne<T extends MembersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MembersDefaultArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    memberTwo<T extends MembersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MembersDefaultArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     directMessage<T extends Conversation$directMessageArgs<ExtArgs> = {}>(args?: Subset<T, Conversation$directMessageArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DirectMessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -8653,7 +8653,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     conversation?: boolean | ConversationDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["directMessage"]>
 
   export type DirectMessageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -8666,7 +8666,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     conversation?: boolean | ConversationDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["directMessage"]>
 
   export type DirectMessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -8679,7 +8679,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     conversation?: boolean | ConversationDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["directMessage"]>
 
   export type DirectMessageSelectScalar = {
@@ -8696,22 +8696,22 @@ export namespace Prisma {
   export type DirectMessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "content" | "fileUrl" | "deleted" | "conversationId" | "memberId" | "createdAt" | "updatedAt", ExtArgs["result"]["directMessage"]>
   export type DirectMessageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     conversation?: boolean | ConversationDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }
   export type DirectMessageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     conversation?: boolean | ConversationDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }
   export type DirectMessageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     conversation?: boolean | ConversationDefaultArgs<ExtArgs>
-    member?: boolean | MemberDefaultArgs<ExtArgs>
+    member?: boolean | MembersDefaultArgs<ExtArgs>
   }
 
   export type $DirectMessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "DirectMessage"
     objects: {
       conversation: Prisma.$ConversationPayload<ExtArgs>
-      member: Prisma.$MemberPayload<ExtArgs>
+      member: Prisma.$MembersPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -9117,7 +9117,7 @@ export namespace Prisma {
   export interface Prisma__DirectMessageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     conversation<T extends ConversationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ConversationDefaultArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    member<T extends MemberDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MemberDefaultArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    member<T extends MembersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MembersDefaultArgs<ExtArgs>>): Prisma__MembersClient<$Result.GetResult<Prisma.$MembersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9609,7 +9609,7 @@ export namespace Prisma {
   export type ServerScalarFieldEnum = (typeof ServerScalarFieldEnum)[keyof typeof ServerScalarFieldEnum]
 
 
-  export const MemberScalarFieldEnum: {
+  export const MembersScalarFieldEnum: {
     id: 'id',
     role: 'role',
     serverId: 'serverId',
@@ -9618,7 +9618,7 @@ export namespace Prisma {
     updatedAt: 'updatedAt'
   };
 
-  export type MemberScalarFieldEnum = (typeof MemberScalarFieldEnum)[keyof typeof MemberScalarFieldEnum]
+  export type MembersScalarFieldEnum = (typeof MembersScalarFieldEnum)[keyof typeof MembersScalarFieldEnum]
 
 
   export const ChannelScalarFieldEnum: {
@@ -9794,7 +9794,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Profile"> | Date | string
     updatedAt?: DateTimeFilter<"Profile"> | Date | string
     servers?: ServerListRelationFilter
-    members?: MemberListRelationFilter
+    members?: MembersListRelationFilter
     channels?: ChannelListRelationFilter
   }
 
@@ -9807,7 +9807,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     servers?: ServerOrderByRelationAggregateInput
-    members?: MemberOrderByRelationAggregateInput
+    members?: MembersOrderByRelationAggregateInput
     channels?: ChannelOrderByRelationAggregateInput
   }
 
@@ -9823,7 +9823,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Profile"> | Date | string
     updatedAt?: DateTimeFilter<"Profile"> | Date | string
     servers?: ServerListRelationFilter
-    members?: MemberListRelationFilter
+    members?: MembersListRelationFilter
     channels?: ChannelListRelationFilter
   }, "id" | "userId">
 
@@ -9865,7 +9865,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Server"> | Date | string
     updatedAt?: DateTimeFilter<"Server"> | Date | string
     profile?: XOR<ProfileScalarRelationFilter, ProfileWhereInput>
-    member?: MemberListRelationFilter
+    member?: MembersListRelationFilter
     channels?: ChannelListRelationFilter
   }
 
@@ -9878,7 +9878,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     profile?: ProfileOrderByWithRelationInput
-    member?: MemberOrderByRelationAggregateInput
+    member?: MembersOrderByRelationAggregateInput
     channels?: ChannelOrderByRelationAggregateInput
   }
 
@@ -9894,7 +9894,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Server"> | Date | string
     updatedAt?: DateTimeFilter<"Server"> | Date | string
     profile?: XOR<ProfileScalarRelationFilter, ProfileWhereInput>
-    member?: MemberListRelationFilter
+    member?: MembersListRelationFilter
     channels?: ChannelListRelationFilter
   }, "id" | "inviteCode">
 
@@ -9924,16 +9924,16 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Server"> | Date | string
   }
 
-  export type MemberWhereInput = {
-    AND?: MemberWhereInput | MemberWhereInput[]
-    OR?: MemberWhereInput[]
-    NOT?: MemberWhereInput | MemberWhereInput[]
-    id?: StringFilter<"Member"> | string
-    role?: EnumMemberRoleFilter<"Member"> | $Enums.MemberRole
-    serverId?: StringFilter<"Member"> | string
-    profileId?: StringFilter<"Member"> | string
-    createdAt?: DateTimeFilter<"Member"> | Date | string
-    updatedAt?: DateTimeFilter<"Member"> | Date | string
+  export type MembersWhereInput = {
+    AND?: MembersWhereInput | MembersWhereInput[]
+    OR?: MembersWhereInput[]
+    NOT?: MembersWhereInput | MembersWhereInput[]
+    id?: StringFilter<"Members"> | string
+    role?: EnumMemberRoleFilter<"Members"> | $Enums.MemberRole
+    serverId?: StringFilter<"Members"> | string
+    profileId?: StringFilter<"Members"> | string
+    createdAt?: DateTimeFilter<"Members"> | Date | string
+    updatedAt?: DateTimeFilter<"Members"> | Date | string
     server?: XOR<ServerScalarRelationFilter, ServerWhereInput>
     profile?: XOR<ProfileScalarRelationFilter, ProfileWhereInput>
     messages?: MessageListRelationFilter
@@ -9942,7 +9942,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationListRelationFilter
   }
 
-  export type MemberOrderByWithRelationInput = {
+  export type MembersOrderByWithRelationInput = {
     id?: SortOrder
     role?: SortOrder
     serverId?: SortOrder
@@ -9957,16 +9957,16 @@ export namespace Prisma {
     conversationsReceived?: ConversationOrderByRelationAggregateInput
   }
 
-  export type MemberWhereUniqueInput = Prisma.AtLeast<{
+  export type MembersWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: MemberWhereInput | MemberWhereInput[]
-    OR?: MemberWhereInput[]
-    NOT?: MemberWhereInput | MemberWhereInput[]
-    role?: EnumMemberRoleFilter<"Member"> | $Enums.MemberRole
-    serverId?: StringFilter<"Member"> | string
-    profileId?: StringFilter<"Member"> | string
-    createdAt?: DateTimeFilter<"Member"> | Date | string
-    updatedAt?: DateTimeFilter<"Member"> | Date | string
+    AND?: MembersWhereInput | MembersWhereInput[]
+    OR?: MembersWhereInput[]
+    NOT?: MembersWhereInput | MembersWhereInput[]
+    role?: EnumMemberRoleFilter<"Members"> | $Enums.MemberRole
+    serverId?: StringFilter<"Members"> | string
+    profileId?: StringFilter<"Members"> | string
+    createdAt?: DateTimeFilter<"Members"> | Date | string
+    updatedAt?: DateTimeFilter<"Members"> | Date | string
     server?: XOR<ServerScalarRelationFilter, ServerWhereInput>
     profile?: XOR<ProfileScalarRelationFilter, ProfileWhereInput>
     messages?: MessageListRelationFilter
@@ -9975,28 +9975,28 @@ export namespace Prisma {
     conversationsReceived?: ConversationListRelationFilter
   }, "id">
 
-  export type MemberOrderByWithAggregationInput = {
+  export type MembersOrderByWithAggregationInput = {
     id?: SortOrder
     role?: SortOrder
     serverId?: SortOrder
     profileId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: MemberCountOrderByAggregateInput
-    _max?: MemberMaxOrderByAggregateInput
-    _min?: MemberMinOrderByAggregateInput
+    _count?: MembersCountOrderByAggregateInput
+    _max?: MembersMaxOrderByAggregateInput
+    _min?: MembersMinOrderByAggregateInput
   }
 
-  export type MemberScalarWhereWithAggregatesInput = {
-    AND?: MemberScalarWhereWithAggregatesInput | MemberScalarWhereWithAggregatesInput[]
-    OR?: MemberScalarWhereWithAggregatesInput[]
-    NOT?: MemberScalarWhereWithAggregatesInput | MemberScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Member"> | string
-    role?: EnumMemberRoleWithAggregatesFilter<"Member"> | $Enums.MemberRole
-    serverId?: StringWithAggregatesFilter<"Member"> | string
-    profileId?: StringWithAggregatesFilter<"Member"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Member"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Member"> | Date | string
+  export type MembersScalarWhereWithAggregatesInput = {
+    AND?: MembersScalarWhereWithAggregatesInput | MembersScalarWhereWithAggregatesInput[]
+    OR?: MembersScalarWhereWithAggregatesInput[]
+    NOT?: MembersScalarWhereWithAggregatesInput | MembersScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Members"> | string
+    role?: EnumMemberRoleWithAggregatesFilter<"Members"> | $Enums.MemberRole
+    serverId?: StringWithAggregatesFilter<"Members"> | string
+    profileId?: StringWithAggregatesFilter<"Members"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Members"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Members"> | Date | string
   }
 
   export type ChannelWhereInput = {
@@ -10083,7 +10083,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Message"> | Date | string
     updatedAt?: DateTimeFilter<"Message"> | Date | string
     channel?: XOR<ChannelScalarRelationFilter, ChannelWhereInput>
-    member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
+    member?: XOR<MembersScalarRelationFilter, MembersWhereInput>
   }
 
   export type MessageOrderByWithRelationInput = {
@@ -10096,7 +10096,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     channel?: ChannelOrderByWithRelationInput
-    member?: MemberOrderByWithRelationInput
+    member?: MembersOrderByWithRelationInput
   }
 
   export type MessageWhereUniqueInput = Prisma.AtLeast<{
@@ -10112,7 +10112,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Message"> | Date | string
     updatedAt?: DateTimeFilter<"Message"> | Date | string
     channel?: XOR<ChannelScalarRelationFilter, ChannelWhereInput>
-    member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
+    member?: XOR<MembersScalarRelationFilter, MembersWhereInput>
   }, "id">
 
   export type MessageOrderByWithAggregationInput = {
@@ -10152,8 +10152,8 @@ export namespace Prisma {
     memberTwoId?: StringFilter<"Conversation"> | string
     createdAt?: DateTimeFilter<"Conversation"> | Date | string
     updatedAt?: DateTimeFilter<"Conversation"> | Date | string
-    memberOne?: XOR<MemberScalarRelationFilter, MemberWhereInput>
-    memberTwo?: XOR<MemberScalarRelationFilter, MemberWhereInput>
+    memberOne?: XOR<MembersScalarRelationFilter, MembersWhereInput>
+    memberTwo?: XOR<MembersScalarRelationFilter, MembersWhereInput>
     directMessage?: DirectMessageListRelationFilter
   }
 
@@ -10163,8 +10163,8 @@ export namespace Prisma {
     memberTwoId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    memberOne?: MemberOrderByWithRelationInput
-    memberTwo?: MemberOrderByWithRelationInput
+    memberOne?: MembersOrderByWithRelationInput
+    memberTwo?: MembersOrderByWithRelationInput
     directMessage?: DirectMessageOrderByRelationAggregateInput
   }
 
@@ -10178,8 +10178,8 @@ export namespace Prisma {
     memberTwoId?: StringFilter<"Conversation"> | string
     createdAt?: DateTimeFilter<"Conversation"> | Date | string
     updatedAt?: DateTimeFilter<"Conversation"> | Date | string
-    memberOne?: XOR<MemberScalarRelationFilter, MemberWhereInput>
-    memberTwo?: XOR<MemberScalarRelationFilter, MemberWhereInput>
+    memberOne?: XOR<MembersScalarRelationFilter, MembersWhereInput>
+    memberTwo?: XOR<MembersScalarRelationFilter, MembersWhereInput>
     directMessage?: DirectMessageListRelationFilter
   }, "id" | "memberOneId_memberTwoId">
 
@@ -10218,7 +10218,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"DirectMessage"> | Date | string
     updatedAt?: DateTimeFilter<"DirectMessage"> | Date | string
     conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
-    member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
+    member?: XOR<MembersScalarRelationFilter, MembersWhereInput>
   }
 
   export type DirectMessageOrderByWithRelationInput = {
@@ -10231,7 +10231,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     conversation?: ConversationOrderByWithRelationInput
-    member?: MemberOrderByWithRelationInput
+    member?: MembersOrderByWithRelationInput
   }
 
   export type DirectMessageWhereUniqueInput = Prisma.AtLeast<{
@@ -10247,7 +10247,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"DirectMessage"> | Date | string
     updatedAt?: DateTimeFilter<"DirectMessage"> | Date | string
     conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
-    member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
+    member?: XOR<MembersScalarRelationFilter, MembersWhereInput>
   }, "id">
 
   export type DirectMessageOrderByWithAggregationInput = {
@@ -10287,7 +10287,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     servers?: ServerCreateNestedManyWithoutProfileInput
-    members?: MemberCreateNestedManyWithoutProfileInput
+    members?: MembersCreateNestedManyWithoutProfileInput
     channels?: ChannelCreateNestedManyWithoutProfileInput
   }
 
@@ -10300,7 +10300,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     servers?: ServerUncheckedCreateNestedManyWithoutProfileInput
-    members?: MemberUncheckedCreateNestedManyWithoutProfileInput
+    members?: MembersUncheckedCreateNestedManyWithoutProfileInput
     channels?: ChannelUncheckedCreateNestedManyWithoutProfileInput
   }
 
@@ -10313,7 +10313,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     servers?: ServerUpdateManyWithoutProfileNestedInput
-    members?: MemberUpdateManyWithoutProfileNestedInput
+    members?: MembersUpdateManyWithoutProfileNestedInput
     channels?: ChannelUpdateManyWithoutProfileNestedInput
   }
 
@@ -10326,7 +10326,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     servers?: ServerUncheckedUpdateManyWithoutProfileNestedInput
-    members?: MemberUncheckedUpdateManyWithoutProfileNestedInput
+    members?: MembersUncheckedUpdateManyWithoutProfileNestedInput
     channels?: ChannelUncheckedUpdateManyWithoutProfileNestedInput
   }
 
@@ -10368,7 +10368,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     profile: ProfileCreateNestedOneWithoutServersInput
-    member?: MemberCreateNestedManyWithoutServerInput
+    member?: MembersCreateNestedManyWithoutServerInput
     channels?: ChannelCreateNestedManyWithoutServerInput
   }
 
@@ -10380,7 +10380,7 @@ export namespace Prisma {
     profileId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    member?: MemberUncheckedCreateNestedManyWithoutServerInput
+    member?: MembersUncheckedCreateNestedManyWithoutServerInput
     channels?: ChannelUncheckedCreateNestedManyWithoutServerInput
   }
 
@@ -10392,7 +10392,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     profile?: ProfileUpdateOneRequiredWithoutServersNestedInput
-    member?: MemberUpdateManyWithoutServerNestedInput
+    member?: MembersUpdateManyWithoutServerNestedInput
     channels?: ChannelUpdateManyWithoutServerNestedInput
   }
 
@@ -10404,7 +10404,7 @@ export namespace Prisma {
     profileId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUncheckedUpdateManyWithoutServerNestedInput
+    member?: MembersUncheckedUpdateManyWithoutServerNestedInput
     channels?: ChannelUncheckedUpdateManyWithoutServerNestedInput
   }
 
@@ -10437,7 +10437,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MemberCreateInput = {
+  export type MembersCreateInput = {
     id?: string
     role?: $Enums.MemberRole
     createdAt?: Date | string
@@ -10450,7 +10450,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberUncheckedCreateInput = {
+  export type MembersUncheckedCreateInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -10463,7 +10463,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberUpdateInput = {
+  export type MembersUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10476,7 +10476,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateInput = {
+  export type MembersUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -10489,7 +10489,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberCreateManyInput = {
+  export type MembersCreateManyInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -10498,14 +10498,14 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MemberUpdateManyMutationInput = {
+  export type MembersUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MemberUncheckedUpdateManyInput = {
+  export type MembersUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -10594,7 +10594,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     channel: ChannelCreateNestedOneWithoutMessagesInput
-    member: MemberCreateNestedOneWithoutMessagesInput
+    member: MembersCreateNestedOneWithoutMessagesInput
   }
 
   export type MessageUncheckedCreateInput = {
@@ -10616,7 +10616,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     channel?: ChannelUpdateOneRequiredWithoutMessagesNestedInput
-    member?: MemberUpdateOneRequiredWithoutMessagesNestedInput
+    member?: MembersUpdateOneRequiredWithoutMessagesNestedInput
   }
 
   export type MessageUncheckedUpdateInput = {
@@ -10665,8 +10665,8 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    memberOne: MemberCreateNestedOneWithoutConversationsInitiatedInput
-    memberTwo: MemberCreateNestedOneWithoutConversationsReceivedInput
+    memberOne: MembersCreateNestedOneWithoutConversationsInitiatedInput
+    memberTwo: MembersCreateNestedOneWithoutConversationsReceivedInput
     directMessage?: DirectMessageCreateNestedManyWithoutConversationInput
   }
 
@@ -10683,8 +10683,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberOne?: MemberUpdateOneRequiredWithoutConversationsInitiatedNestedInput
-    memberTwo?: MemberUpdateOneRequiredWithoutConversationsReceivedNestedInput
+    memberOne?: MembersUpdateOneRequiredWithoutConversationsInitiatedNestedInput
+    memberTwo?: MembersUpdateOneRequiredWithoutConversationsReceivedNestedInput
     directMessage?: DirectMessageUpdateManyWithoutConversationNestedInput
   }
 
@@ -10727,7 +10727,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     conversation: ConversationCreateNestedOneWithoutDirectMessageInput
-    member: MemberCreateNestedOneWithoutDirectMessageInput
+    member: MembersCreateNestedOneWithoutDirectMessageInput
   }
 
   export type DirectMessageUncheckedCreateInput = {
@@ -10749,7 +10749,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     conversation?: ConversationUpdateOneRequiredWithoutDirectMessageNestedInput
-    member?: MemberUpdateOneRequiredWithoutDirectMessageNestedInput
+    member?: MembersUpdateOneRequiredWithoutDirectMessageNestedInput
   }
 
   export type DirectMessageUncheckedUpdateInput = {
@@ -10826,10 +10826,10 @@ export namespace Prisma {
     none?: ServerWhereInput
   }
 
-  export type MemberListRelationFilter = {
-    every?: MemberWhereInput
-    some?: MemberWhereInput
-    none?: MemberWhereInput
+  export type MembersListRelationFilter = {
+    every?: MembersWhereInput
+    some?: MembersWhereInput
+    none?: MembersWhereInput
   }
 
   export type ChannelListRelationFilter = {
@@ -10842,7 +10842,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type MemberOrderByRelationAggregateInput = {
+  export type MembersOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -10989,7 +10989,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type MemberCountOrderByAggregateInput = {
+  export type MembersCountOrderByAggregateInput = {
     id?: SortOrder
     role?: SortOrder
     serverId?: SortOrder
@@ -10998,7 +10998,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type MemberMaxOrderByAggregateInput = {
+  export type MembersMaxOrderByAggregateInput = {
     id?: SortOrder
     role?: SortOrder
     serverId?: SortOrder
@@ -11007,7 +11007,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type MemberMinOrderByAggregateInput = {
+  export type MembersMinOrderByAggregateInput = {
     id?: SortOrder
     role?: SortOrder
     serverId?: SortOrder
@@ -11098,9 +11098,9 @@ export namespace Prisma {
     isNot?: ChannelWhereInput
   }
 
-  export type MemberScalarRelationFilter = {
-    is?: MemberWhereInput
-    isNot?: MemberWhereInput
+  export type MembersScalarRelationFilter = {
+    is?: MembersWhereInput
+    isNot?: MembersWhereInput
   }
 
   export type SortOrderInput = {
@@ -11241,11 +11241,11 @@ export namespace Prisma {
     connect?: ServerWhereUniqueInput | ServerWhereUniqueInput[]
   }
 
-  export type MemberCreateNestedManyWithoutProfileInput = {
-    create?: XOR<MemberCreateWithoutProfileInput, MemberUncheckedCreateWithoutProfileInput> | MemberCreateWithoutProfileInput[] | MemberUncheckedCreateWithoutProfileInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutProfileInput | MemberCreateOrConnectWithoutProfileInput[]
-    createMany?: MemberCreateManyProfileInputEnvelope
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
+  export type MembersCreateNestedManyWithoutProfileInput = {
+    create?: XOR<MembersCreateWithoutProfileInput, MembersUncheckedCreateWithoutProfileInput> | MembersCreateWithoutProfileInput[] | MembersUncheckedCreateWithoutProfileInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutProfileInput | MembersCreateOrConnectWithoutProfileInput[]
+    createMany?: MembersCreateManyProfileInputEnvelope
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
   }
 
   export type ChannelCreateNestedManyWithoutProfileInput = {
@@ -11262,11 +11262,11 @@ export namespace Prisma {
     connect?: ServerWhereUniqueInput | ServerWhereUniqueInput[]
   }
 
-  export type MemberUncheckedCreateNestedManyWithoutProfileInput = {
-    create?: XOR<MemberCreateWithoutProfileInput, MemberUncheckedCreateWithoutProfileInput> | MemberCreateWithoutProfileInput[] | MemberUncheckedCreateWithoutProfileInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutProfileInput | MemberCreateOrConnectWithoutProfileInput[]
-    createMany?: MemberCreateManyProfileInputEnvelope
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
+  export type MembersUncheckedCreateNestedManyWithoutProfileInput = {
+    create?: XOR<MembersCreateWithoutProfileInput, MembersUncheckedCreateWithoutProfileInput> | MembersCreateWithoutProfileInput[] | MembersUncheckedCreateWithoutProfileInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutProfileInput | MembersCreateOrConnectWithoutProfileInput[]
+    createMany?: MembersCreateManyProfileInputEnvelope
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
   }
 
   export type ChannelUncheckedCreateNestedManyWithoutProfileInput = {
@@ -11298,18 +11298,18 @@ export namespace Prisma {
     deleteMany?: ServerScalarWhereInput | ServerScalarWhereInput[]
   }
 
-  export type MemberUpdateManyWithoutProfileNestedInput = {
-    create?: XOR<MemberCreateWithoutProfileInput, MemberUncheckedCreateWithoutProfileInput> | MemberCreateWithoutProfileInput[] | MemberUncheckedCreateWithoutProfileInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutProfileInput | MemberCreateOrConnectWithoutProfileInput[]
-    upsert?: MemberUpsertWithWhereUniqueWithoutProfileInput | MemberUpsertWithWhereUniqueWithoutProfileInput[]
-    createMany?: MemberCreateManyProfileInputEnvelope
-    set?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    disconnect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    delete?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    update?: MemberUpdateWithWhereUniqueWithoutProfileInput | MemberUpdateWithWhereUniqueWithoutProfileInput[]
-    updateMany?: MemberUpdateManyWithWhereWithoutProfileInput | MemberUpdateManyWithWhereWithoutProfileInput[]
-    deleteMany?: MemberScalarWhereInput | MemberScalarWhereInput[]
+  export type MembersUpdateManyWithoutProfileNestedInput = {
+    create?: XOR<MembersCreateWithoutProfileInput, MembersUncheckedCreateWithoutProfileInput> | MembersCreateWithoutProfileInput[] | MembersUncheckedCreateWithoutProfileInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutProfileInput | MembersCreateOrConnectWithoutProfileInput[]
+    upsert?: MembersUpsertWithWhereUniqueWithoutProfileInput | MembersUpsertWithWhereUniqueWithoutProfileInput[]
+    createMany?: MembersCreateManyProfileInputEnvelope
+    set?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    disconnect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    delete?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    update?: MembersUpdateWithWhereUniqueWithoutProfileInput | MembersUpdateWithWhereUniqueWithoutProfileInput[]
+    updateMany?: MembersUpdateManyWithWhereWithoutProfileInput | MembersUpdateManyWithWhereWithoutProfileInput[]
+    deleteMany?: MembersScalarWhereInput | MembersScalarWhereInput[]
   }
 
   export type ChannelUpdateManyWithoutProfileNestedInput = {
@@ -11340,18 +11340,18 @@ export namespace Prisma {
     deleteMany?: ServerScalarWhereInput | ServerScalarWhereInput[]
   }
 
-  export type MemberUncheckedUpdateManyWithoutProfileNestedInput = {
-    create?: XOR<MemberCreateWithoutProfileInput, MemberUncheckedCreateWithoutProfileInput> | MemberCreateWithoutProfileInput[] | MemberUncheckedCreateWithoutProfileInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutProfileInput | MemberCreateOrConnectWithoutProfileInput[]
-    upsert?: MemberUpsertWithWhereUniqueWithoutProfileInput | MemberUpsertWithWhereUniqueWithoutProfileInput[]
-    createMany?: MemberCreateManyProfileInputEnvelope
-    set?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    disconnect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    delete?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    update?: MemberUpdateWithWhereUniqueWithoutProfileInput | MemberUpdateWithWhereUniqueWithoutProfileInput[]
-    updateMany?: MemberUpdateManyWithWhereWithoutProfileInput | MemberUpdateManyWithWhereWithoutProfileInput[]
-    deleteMany?: MemberScalarWhereInput | MemberScalarWhereInput[]
+  export type MembersUncheckedUpdateManyWithoutProfileNestedInput = {
+    create?: XOR<MembersCreateWithoutProfileInput, MembersUncheckedCreateWithoutProfileInput> | MembersCreateWithoutProfileInput[] | MembersUncheckedCreateWithoutProfileInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutProfileInput | MembersCreateOrConnectWithoutProfileInput[]
+    upsert?: MembersUpsertWithWhereUniqueWithoutProfileInput | MembersUpsertWithWhereUniqueWithoutProfileInput[]
+    createMany?: MembersCreateManyProfileInputEnvelope
+    set?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    disconnect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    delete?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    update?: MembersUpdateWithWhereUniqueWithoutProfileInput | MembersUpdateWithWhereUniqueWithoutProfileInput[]
+    updateMany?: MembersUpdateManyWithWhereWithoutProfileInput | MembersUpdateManyWithWhereWithoutProfileInput[]
+    deleteMany?: MembersScalarWhereInput | MembersScalarWhereInput[]
   }
 
   export type ChannelUncheckedUpdateManyWithoutProfileNestedInput = {
@@ -11374,11 +11374,11 @@ export namespace Prisma {
     connect?: ProfileWhereUniqueInput
   }
 
-  export type MemberCreateNestedManyWithoutServerInput = {
-    create?: XOR<MemberCreateWithoutServerInput, MemberUncheckedCreateWithoutServerInput> | MemberCreateWithoutServerInput[] | MemberUncheckedCreateWithoutServerInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutServerInput | MemberCreateOrConnectWithoutServerInput[]
-    createMany?: MemberCreateManyServerInputEnvelope
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
+  export type MembersCreateNestedManyWithoutServerInput = {
+    create?: XOR<MembersCreateWithoutServerInput, MembersUncheckedCreateWithoutServerInput> | MembersCreateWithoutServerInput[] | MembersUncheckedCreateWithoutServerInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutServerInput | MembersCreateOrConnectWithoutServerInput[]
+    createMany?: MembersCreateManyServerInputEnvelope
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
   }
 
   export type ChannelCreateNestedManyWithoutServerInput = {
@@ -11388,11 +11388,11 @@ export namespace Prisma {
     connect?: ChannelWhereUniqueInput | ChannelWhereUniqueInput[]
   }
 
-  export type MemberUncheckedCreateNestedManyWithoutServerInput = {
-    create?: XOR<MemberCreateWithoutServerInput, MemberUncheckedCreateWithoutServerInput> | MemberCreateWithoutServerInput[] | MemberUncheckedCreateWithoutServerInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutServerInput | MemberCreateOrConnectWithoutServerInput[]
-    createMany?: MemberCreateManyServerInputEnvelope
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
+  export type MembersUncheckedCreateNestedManyWithoutServerInput = {
+    create?: XOR<MembersCreateWithoutServerInput, MembersUncheckedCreateWithoutServerInput> | MembersCreateWithoutServerInput[] | MembersUncheckedCreateWithoutServerInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutServerInput | MembersCreateOrConnectWithoutServerInput[]
+    createMany?: MembersCreateManyServerInputEnvelope
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
   }
 
   export type ChannelUncheckedCreateNestedManyWithoutServerInput = {
@@ -11410,18 +11410,18 @@ export namespace Prisma {
     update?: XOR<XOR<ProfileUpdateToOneWithWhereWithoutServersInput, ProfileUpdateWithoutServersInput>, ProfileUncheckedUpdateWithoutServersInput>
   }
 
-  export type MemberUpdateManyWithoutServerNestedInput = {
-    create?: XOR<MemberCreateWithoutServerInput, MemberUncheckedCreateWithoutServerInput> | MemberCreateWithoutServerInput[] | MemberUncheckedCreateWithoutServerInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutServerInput | MemberCreateOrConnectWithoutServerInput[]
-    upsert?: MemberUpsertWithWhereUniqueWithoutServerInput | MemberUpsertWithWhereUniqueWithoutServerInput[]
-    createMany?: MemberCreateManyServerInputEnvelope
-    set?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    disconnect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    delete?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    update?: MemberUpdateWithWhereUniqueWithoutServerInput | MemberUpdateWithWhereUniqueWithoutServerInput[]
-    updateMany?: MemberUpdateManyWithWhereWithoutServerInput | MemberUpdateManyWithWhereWithoutServerInput[]
-    deleteMany?: MemberScalarWhereInput | MemberScalarWhereInput[]
+  export type MembersUpdateManyWithoutServerNestedInput = {
+    create?: XOR<MembersCreateWithoutServerInput, MembersUncheckedCreateWithoutServerInput> | MembersCreateWithoutServerInput[] | MembersUncheckedCreateWithoutServerInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutServerInput | MembersCreateOrConnectWithoutServerInput[]
+    upsert?: MembersUpsertWithWhereUniqueWithoutServerInput | MembersUpsertWithWhereUniqueWithoutServerInput[]
+    createMany?: MembersCreateManyServerInputEnvelope
+    set?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    disconnect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    delete?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    update?: MembersUpdateWithWhereUniqueWithoutServerInput | MembersUpdateWithWhereUniqueWithoutServerInput[]
+    updateMany?: MembersUpdateManyWithWhereWithoutServerInput | MembersUpdateManyWithWhereWithoutServerInput[]
+    deleteMany?: MembersScalarWhereInput | MembersScalarWhereInput[]
   }
 
   export type ChannelUpdateManyWithoutServerNestedInput = {
@@ -11438,18 +11438,18 @@ export namespace Prisma {
     deleteMany?: ChannelScalarWhereInput | ChannelScalarWhereInput[]
   }
 
-  export type MemberUncheckedUpdateManyWithoutServerNestedInput = {
-    create?: XOR<MemberCreateWithoutServerInput, MemberUncheckedCreateWithoutServerInput> | MemberCreateWithoutServerInput[] | MemberUncheckedCreateWithoutServerInput[]
-    connectOrCreate?: MemberCreateOrConnectWithoutServerInput | MemberCreateOrConnectWithoutServerInput[]
-    upsert?: MemberUpsertWithWhereUniqueWithoutServerInput | MemberUpsertWithWhereUniqueWithoutServerInput[]
-    createMany?: MemberCreateManyServerInputEnvelope
-    set?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    disconnect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    delete?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    connect?: MemberWhereUniqueInput | MemberWhereUniqueInput[]
-    update?: MemberUpdateWithWhereUniqueWithoutServerInput | MemberUpdateWithWhereUniqueWithoutServerInput[]
-    updateMany?: MemberUpdateManyWithWhereWithoutServerInput | MemberUpdateManyWithWhereWithoutServerInput[]
-    deleteMany?: MemberScalarWhereInput | MemberScalarWhereInput[]
+  export type MembersUncheckedUpdateManyWithoutServerNestedInput = {
+    create?: XOR<MembersCreateWithoutServerInput, MembersUncheckedCreateWithoutServerInput> | MembersCreateWithoutServerInput[] | MembersUncheckedCreateWithoutServerInput[]
+    connectOrCreate?: MembersCreateOrConnectWithoutServerInput | MembersCreateOrConnectWithoutServerInput[]
+    upsert?: MembersUpsertWithWhereUniqueWithoutServerInput | MembersUpsertWithWhereUniqueWithoutServerInput[]
+    createMany?: MembersCreateManyServerInputEnvelope
+    set?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    disconnect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    delete?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
+    update?: MembersUpdateWithWhereUniqueWithoutServerInput | MembersUpdateWithWhereUniqueWithoutServerInput[]
+    updateMany?: MembersUpdateManyWithWhereWithoutServerInput | MembersUpdateManyWithWhereWithoutServerInput[]
+    deleteMany?: MembersScalarWhereInput | MembersScalarWhereInput[]
   }
 
   export type ChannelUncheckedUpdateManyWithoutServerNestedInput = {
@@ -11746,10 +11746,10 @@ export namespace Prisma {
     connect?: ChannelWhereUniqueInput
   }
 
-  export type MemberCreateNestedOneWithoutMessagesInput = {
-    create?: XOR<MemberCreateWithoutMessagesInput, MemberUncheckedCreateWithoutMessagesInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutMessagesInput
-    connect?: MemberWhereUniqueInput
+  export type MembersCreateNestedOneWithoutMessagesInput = {
+    create?: XOR<MembersCreateWithoutMessagesInput, MembersUncheckedCreateWithoutMessagesInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutMessagesInput
+    connect?: MembersWhereUniqueInput
   }
 
   export type BoolFieldUpdateOperationsInput = {
@@ -11768,24 +11768,24 @@ export namespace Prisma {
     update?: XOR<XOR<ChannelUpdateToOneWithWhereWithoutMessagesInput, ChannelUpdateWithoutMessagesInput>, ChannelUncheckedUpdateWithoutMessagesInput>
   }
 
-  export type MemberUpdateOneRequiredWithoutMessagesNestedInput = {
-    create?: XOR<MemberCreateWithoutMessagesInput, MemberUncheckedCreateWithoutMessagesInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutMessagesInput
-    upsert?: MemberUpsertWithoutMessagesInput
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutMessagesInput, MemberUpdateWithoutMessagesInput>, MemberUncheckedUpdateWithoutMessagesInput>
+  export type MembersUpdateOneRequiredWithoutMessagesNestedInput = {
+    create?: XOR<MembersCreateWithoutMessagesInput, MembersUncheckedCreateWithoutMessagesInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutMessagesInput
+    upsert?: MembersUpsertWithoutMessagesInput
+    connect?: MembersWhereUniqueInput
+    update?: XOR<XOR<MembersUpdateToOneWithWhereWithoutMessagesInput, MembersUpdateWithoutMessagesInput>, MembersUncheckedUpdateWithoutMessagesInput>
   }
 
-  export type MemberCreateNestedOneWithoutConversationsInitiatedInput = {
-    create?: XOR<MemberCreateWithoutConversationsInitiatedInput, MemberUncheckedCreateWithoutConversationsInitiatedInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutConversationsInitiatedInput
-    connect?: MemberWhereUniqueInput
+  export type MembersCreateNestedOneWithoutConversationsInitiatedInput = {
+    create?: XOR<MembersCreateWithoutConversationsInitiatedInput, MembersUncheckedCreateWithoutConversationsInitiatedInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutConversationsInitiatedInput
+    connect?: MembersWhereUniqueInput
   }
 
-  export type MemberCreateNestedOneWithoutConversationsReceivedInput = {
-    create?: XOR<MemberCreateWithoutConversationsReceivedInput, MemberUncheckedCreateWithoutConversationsReceivedInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutConversationsReceivedInput
-    connect?: MemberWhereUniqueInput
+  export type MembersCreateNestedOneWithoutConversationsReceivedInput = {
+    create?: XOR<MembersCreateWithoutConversationsReceivedInput, MembersUncheckedCreateWithoutConversationsReceivedInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutConversationsReceivedInput
+    connect?: MembersWhereUniqueInput
   }
 
   export type DirectMessageCreateNestedManyWithoutConversationInput = {
@@ -11802,20 +11802,20 @@ export namespace Prisma {
     connect?: DirectMessageWhereUniqueInput | DirectMessageWhereUniqueInput[]
   }
 
-  export type MemberUpdateOneRequiredWithoutConversationsInitiatedNestedInput = {
-    create?: XOR<MemberCreateWithoutConversationsInitiatedInput, MemberUncheckedCreateWithoutConversationsInitiatedInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutConversationsInitiatedInput
-    upsert?: MemberUpsertWithoutConversationsInitiatedInput
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutConversationsInitiatedInput, MemberUpdateWithoutConversationsInitiatedInput>, MemberUncheckedUpdateWithoutConversationsInitiatedInput>
+  export type MembersUpdateOneRequiredWithoutConversationsInitiatedNestedInput = {
+    create?: XOR<MembersCreateWithoutConversationsInitiatedInput, MembersUncheckedCreateWithoutConversationsInitiatedInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutConversationsInitiatedInput
+    upsert?: MembersUpsertWithoutConversationsInitiatedInput
+    connect?: MembersWhereUniqueInput
+    update?: XOR<XOR<MembersUpdateToOneWithWhereWithoutConversationsInitiatedInput, MembersUpdateWithoutConversationsInitiatedInput>, MembersUncheckedUpdateWithoutConversationsInitiatedInput>
   }
 
-  export type MemberUpdateOneRequiredWithoutConversationsReceivedNestedInput = {
-    create?: XOR<MemberCreateWithoutConversationsReceivedInput, MemberUncheckedCreateWithoutConversationsReceivedInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutConversationsReceivedInput
-    upsert?: MemberUpsertWithoutConversationsReceivedInput
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutConversationsReceivedInput, MemberUpdateWithoutConversationsReceivedInput>, MemberUncheckedUpdateWithoutConversationsReceivedInput>
+  export type MembersUpdateOneRequiredWithoutConversationsReceivedNestedInput = {
+    create?: XOR<MembersCreateWithoutConversationsReceivedInput, MembersUncheckedCreateWithoutConversationsReceivedInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutConversationsReceivedInput
+    upsert?: MembersUpsertWithoutConversationsReceivedInput
+    connect?: MembersWhereUniqueInput
+    update?: XOR<XOR<MembersUpdateToOneWithWhereWithoutConversationsReceivedInput, MembersUpdateWithoutConversationsReceivedInput>, MembersUncheckedUpdateWithoutConversationsReceivedInput>
   }
 
   export type DirectMessageUpdateManyWithoutConversationNestedInput = {
@@ -11852,10 +11852,10 @@ export namespace Prisma {
     connect?: ConversationWhereUniqueInput
   }
 
-  export type MemberCreateNestedOneWithoutDirectMessageInput = {
-    create?: XOR<MemberCreateWithoutDirectMessageInput, MemberUncheckedCreateWithoutDirectMessageInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutDirectMessageInput
-    connect?: MemberWhereUniqueInput
+  export type MembersCreateNestedOneWithoutDirectMessageInput = {
+    create?: XOR<MembersCreateWithoutDirectMessageInput, MembersUncheckedCreateWithoutDirectMessageInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutDirectMessageInput
+    connect?: MembersWhereUniqueInput
   }
 
   export type ConversationUpdateOneRequiredWithoutDirectMessageNestedInput = {
@@ -11866,12 +11866,12 @@ export namespace Prisma {
     update?: XOR<XOR<ConversationUpdateToOneWithWhereWithoutDirectMessageInput, ConversationUpdateWithoutDirectMessageInput>, ConversationUncheckedUpdateWithoutDirectMessageInput>
   }
 
-  export type MemberUpdateOneRequiredWithoutDirectMessageNestedInput = {
-    create?: XOR<MemberCreateWithoutDirectMessageInput, MemberUncheckedCreateWithoutDirectMessageInput>
-    connectOrCreate?: MemberCreateOrConnectWithoutDirectMessageInput
-    upsert?: MemberUpsertWithoutDirectMessageInput
-    connect?: MemberWhereUniqueInput
-    update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutDirectMessageInput, MemberUpdateWithoutDirectMessageInput>, MemberUncheckedUpdateWithoutDirectMessageInput>
+  export type MembersUpdateOneRequiredWithoutDirectMessageNestedInput = {
+    create?: XOR<MembersCreateWithoutDirectMessageInput, MembersUncheckedCreateWithoutDirectMessageInput>
+    connectOrCreate?: MembersCreateOrConnectWithoutDirectMessageInput
+    upsert?: MembersUpsertWithoutDirectMessageInput
+    connect?: MembersWhereUniqueInput
+    update?: XOR<XOR<MembersUpdateToOneWithWhereWithoutDirectMessageInput, MembersUpdateWithoutDirectMessageInput>, MembersUncheckedUpdateWithoutDirectMessageInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -12037,7 +12037,7 @@ export namespace Prisma {
     inviteCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    member?: MemberCreateNestedManyWithoutServerInput
+    member?: MembersCreateNestedManyWithoutServerInput
     channels?: ChannelCreateNestedManyWithoutServerInput
   }
 
@@ -12048,7 +12048,7 @@ export namespace Prisma {
     inviteCode: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    member?: MemberUncheckedCreateNestedManyWithoutServerInput
+    member?: MembersUncheckedCreateNestedManyWithoutServerInput
     channels?: ChannelUncheckedCreateNestedManyWithoutServerInput
   }
 
@@ -12062,7 +12062,7 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type MemberCreateWithoutProfileInput = {
+  export type MembersCreateWithoutProfileInput = {
     id?: string
     role?: $Enums.MemberRole
     createdAt?: Date | string
@@ -12074,7 +12074,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberUncheckedCreateWithoutProfileInput = {
+  export type MembersUncheckedCreateWithoutProfileInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -12086,13 +12086,13 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberCreateOrConnectWithoutProfileInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutProfileInput, MemberUncheckedCreateWithoutProfileInput>
+  export type MembersCreateOrConnectWithoutProfileInput = {
+    where: MembersWhereUniqueInput
+    create: XOR<MembersCreateWithoutProfileInput, MembersUncheckedCreateWithoutProfileInput>
   }
 
-  export type MemberCreateManyProfileInputEnvelope = {
-    data: MemberCreateManyProfileInput | MemberCreateManyProfileInput[]
+  export type MembersCreateManyProfileInputEnvelope = {
+    data: MembersCreateManyProfileInput | MembersCreateManyProfileInput[]
     skipDuplicates?: boolean
   }
 
@@ -12155,32 +12155,32 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Server"> | Date | string
   }
 
-  export type MemberUpsertWithWhereUniqueWithoutProfileInput = {
-    where: MemberWhereUniqueInput
-    update: XOR<MemberUpdateWithoutProfileInput, MemberUncheckedUpdateWithoutProfileInput>
-    create: XOR<MemberCreateWithoutProfileInput, MemberUncheckedCreateWithoutProfileInput>
+  export type MembersUpsertWithWhereUniqueWithoutProfileInput = {
+    where: MembersWhereUniqueInput
+    update: XOR<MembersUpdateWithoutProfileInput, MembersUncheckedUpdateWithoutProfileInput>
+    create: XOR<MembersCreateWithoutProfileInput, MembersUncheckedCreateWithoutProfileInput>
   }
 
-  export type MemberUpdateWithWhereUniqueWithoutProfileInput = {
-    where: MemberWhereUniqueInput
-    data: XOR<MemberUpdateWithoutProfileInput, MemberUncheckedUpdateWithoutProfileInput>
+  export type MembersUpdateWithWhereUniqueWithoutProfileInput = {
+    where: MembersWhereUniqueInput
+    data: XOR<MembersUpdateWithoutProfileInput, MembersUncheckedUpdateWithoutProfileInput>
   }
 
-  export type MemberUpdateManyWithWhereWithoutProfileInput = {
-    where: MemberScalarWhereInput
-    data: XOR<MemberUpdateManyMutationInput, MemberUncheckedUpdateManyWithoutProfileInput>
+  export type MembersUpdateManyWithWhereWithoutProfileInput = {
+    where: MembersScalarWhereInput
+    data: XOR<MembersUpdateManyMutationInput, MembersUncheckedUpdateManyWithoutProfileInput>
   }
 
-  export type MemberScalarWhereInput = {
-    AND?: MemberScalarWhereInput | MemberScalarWhereInput[]
-    OR?: MemberScalarWhereInput[]
-    NOT?: MemberScalarWhereInput | MemberScalarWhereInput[]
-    id?: StringFilter<"Member"> | string
-    role?: EnumMemberRoleFilter<"Member"> | $Enums.MemberRole
-    serverId?: StringFilter<"Member"> | string
-    profileId?: StringFilter<"Member"> | string
-    createdAt?: DateTimeFilter<"Member"> | Date | string
-    updatedAt?: DateTimeFilter<"Member"> | Date | string
+  export type MembersScalarWhereInput = {
+    AND?: MembersScalarWhereInput | MembersScalarWhereInput[]
+    OR?: MembersScalarWhereInput[]
+    NOT?: MembersScalarWhereInput | MembersScalarWhereInput[]
+    id?: StringFilter<"Members"> | string
+    role?: EnumMemberRoleFilter<"Members"> | $Enums.MemberRole
+    serverId?: StringFilter<"Members"> | string
+    profileId?: StringFilter<"Members"> | string
+    createdAt?: DateTimeFilter<"Members"> | Date | string
+    updatedAt?: DateTimeFilter<"Members"> | Date | string
   }
 
   export type ChannelUpsertWithWhereUniqueWithoutProfileInput = {
@@ -12220,7 +12220,7 @@ export namespace Prisma {
     email: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    members?: MemberCreateNestedManyWithoutProfileInput
+    members?: MembersCreateNestedManyWithoutProfileInput
     channels?: ChannelCreateNestedManyWithoutProfileInput
   }
 
@@ -12232,7 +12232,7 @@ export namespace Prisma {
     email: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    members?: MemberUncheckedCreateNestedManyWithoutProfileInput
+    members?: MembersUncheckedCreateNestedManyWithoutProfileInput
     channels?: ChannelUncheckedCreateNestedManyWithoutProfileInput
   }
 
@@ -12241,7 +12241,7 @@ export namespace Prisma {
     create: XOR<ProfileCreateWithoutServersInput, ProfileUncheckedCreateWithoutServersInput>
   }
 
-  export type MemberCreateWithoutServerInput = {
+  export type MembersCreateWithoutServerInput = {
     id?: string
     role?: $Enums.MemberRole
     createdAt?: Date | string
@@ -12253,7 +12253,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberUncheckedCreateWithoutServerInput = {
+  export type MembersUncheckedCreateWithoutServerInput = {
     id?: string
     role?: $Enums.MemberRole
     profileId: string
@@ -12265,13 +12265,13 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberCreateOrConnectWithoutServerInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutServerInput, MemberUncheckedCreateWithoutServerInput>
+  export type MembersCreateOrConnectWithoutServerInput = {
+    where: MembersWhereUniqueInput
+    create: XOR<MembersCreateWithoutServerInput, MembersUncheckedCreateWithoutServerInput>
   }
 
-  export type MemberCreateManyServerInputEnvelope = {
-    data: MemberCreateManyServerInput | MemberCreateManyServerInput[]
+  export type MembersCreateManyServerInputEnvelope = {
+    data: MembersCreateManyServerInput | MembersCreateManyServerInput[]
     skipDuplicates?: boolean
   }
 
@@ -12324,7 +12324,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    members?: MemberUpdateManyWithoutProfileNestedInput
+    members?: MembersUpdateManyWithoutProfileNestedInput
     channels?: ChannelUpdateManyWithoutProfileNestedInput
   }
 
@@ -12336,24 +12336,24 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    members?: MemberUncheckedUpdateManyWithoutProfileNestedInput
+    members?: MembersUncheckedUpdateManyWithoutProfileNestedInput
     channels?: ChannelUncheckedUpdateManyWithoutProfileNestedInput
   }
 
-  export type MemberUpsertWithWhereUniqueWithoutServerInput = {
-    where: MemberWhereUniqueInput
-    update: XOR<MemberUpdateWithoutServerInput, MemberUncheckedUpdateWithoutServerInput>
-    create: XOR<MemberCreateWithoutServerInput, MemberUncheckedCreateWithoutServerInput>
+  export type MembersUpsertWithWhereUniqueWithoutServerInput = {
+    where: MembersWhereUniqueInput
+    update: XOR<MembersUpdateWithoutServerInput, MembersUncheckedUpdateWithoutServerInput>
+    create: XOR<MembersCreateWithoutServerInput, MembersUncheckedCreateWithoutServerInput>
   }
 
-  export type MemberUpdateWithWhereUniqueWithoutServerInput = {
-    where: MemberWhereUniqueInput
-    data: XOR<MemberUpdateWithoutServerInput, MemberUncheckedUpdateWithoutServerInput>
+  export type MembersUpdateWithWhereUniqueWithoutServerInput = {
+    where: MembersWhereUniqueInput
+    data: XOR<MembersUpdateWithoutServerInput, MembersUncheckedUpdateWithoutServerInput>
   }
 
-  export type MemberUpdateManyWithWhereWithoutServerInput = {
-    where: MemberScalarWhereInput
-    data: XOR<MemberUpdateManyMutationInput, MemberUncheckedUpdateManyWithoutServerInput>
+  export type MembersUpdateManyWithWhereWithoutServerInput = {
+    where: MembersScalarWhereInput
+    data: XOR<MembersUpdateManyMutationInput, MembersUncheckedUpdateManyWithoutServerInput>
   }
 
   export type ChannelUpsertWithWhereUniqueWithoutServerInput = {
@@ -12492,7 +12492,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    memberTwo: MemberCreateNestedOneWithoutConversationsReceivedInput
+    memberTwo: MembersCreateNestedOneWithoutConversationsReceivedInput
     directMessage?: DirectMessageCreateNestedManyWithoutConversationInput
   }
 
@@ -12518,7 +12518,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    memberOne: MemberCreateNestedOneWithoutConversationsInitiatedInput
+    memberOne: MembersCreateNestedOneWithoutConversationsInitiatedInput
     directMessage?: DirectMessageCreateNestedManyWithoutConversationInput
   }
 
@@ -12719,7 +12719,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     profile: ProfileCreateNestedOneWithoutServersInput
-    member?: MemberCreateNestedManyWithoutServerInput
+    member?: MembersCreateNestedManyWithoutServerInput
   }
 
   export type ServerUncheckedCreateWithoutChannelsInput = {
@@ -12730,7 +12730,7 @@ export namespace Prisma {
     profileId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    member?: MemberUncheckedCreateNestedManyWithoutServerInput
+    member?: MembersUncheckedCreateNestedManyWithoutServerInput
   }
 
   export type ServerCreateOrConnectWithoutChannelsInput = {
@@ -12747,7 +12747,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     servers?: ServerCreateNestedManyWithoutProfileInput
-    members?: MemberCreateNestedManyWithoutProfileInput
+    members?: MembersCreateNestedManyWithoutProfileInput
   }
 
   export type ProfileUncheckedCreateWithoutChannelsInput = {
@@ -12759,7 +12759,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     servers?: ServerUncheckedCreateNestedManyWithoutProfileInput
-    members?: MemberUncheckedCreateNestedManyWithoutProfileInput
+    members?: MembersUncheckedCreateNestedManyWithoutProfileInput
   }
 
   export type ProfileCreateOrConnectWithoutChannelsInput = {
@@ -12774,7 +12774,7 @@ export namespace Prisma {
     fileUrl?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    member: MemberCreateNestedOneWithoutMessagesInput
+    member: MembersCreateNestedOneWithoutMessagesInput
   }
 
   export type MessageUncheckedCreateWithoutChannelInput = {
@@ -12816,7 +12816,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     profile?: ProfileUpdateOneRequiredWithoutServersNestedInput
-    member?: MemberUpdateManyWithoutServerNestedInput
+    member?: MembersUpdateManyWithoutServerNestedInput
   }
 
   export type ServerUncheckedUpdateWithoutChannelsInput = {
@@ -12827,7 +12827,7 @@ export namespace Prisma {
     profileId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUncheckedUpdateManyWithoutServerNestedInput
+    member?: MembersUncheckedUpdateManyWithoutServerNestedInput
   }
 
   export type ProfileUpsertWithoutChannelsInput = {
@@ -12850,7 +12850,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     servers?: ServerUpdateManyWithoutProfileNestedInput
-    members?: MemberUpdateManyWithoutProfileNestedInput
+    members?: MembersUpdateManyWithoutProfileNestedInput
   }
 
   export type ProfileUncheckedUpdateWithoutChannelsInput = {
@@ -12862,7 +12862,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     servers?: ServerUncheckedUpdateManyWithoutProfileNestedInput
-    members?: MemberUncheckedUpdateManyWithoutProfileNestedInput
+    members?: MembersUncheckedUpdateManyWithoutProfileNestedInput
   }
 
   export type MessageUpsertWithWhereUniqueWithoutChannelInput = {
@@ -12906,7 +12906,7 @@ export namespace Prisma {
     create: XOR<ChannelCreateWithoutMessagesInput, ChannelUncheckedCreateWithoutMessagesInput>
   }
 
-  export type MemberCreateWithoutMessagesInput = {
+  export type MembersCreateWithoutMessagesInput = {
     id?: string
     role?: $Enums.MemberRole
     createdAt?: Date | string
@@ -12918,7 +12918,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberUncheckedCreateWithoutMessagesInput = {
+  export type MembersUncheckedCreateWithoutMessagesInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -12930,9 +12930,9 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberCreateOrConnectWithoutMessagesInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutMessagesInput, MemberUncheckedCreateWithoutMessagesInput>
+  export type MembersCreateOrConnectWithoutMessagesInput = {
+    where: MembersWhereUniqueInput
+    create: XOR<MembersCreateWithoutMessagesInput, MembersUncheckedCreateWithoutMessagesInput>
   }
 
   export type ChannelUpsertWithoutMessagesInput = {
@@ -12966,18 +12966,18 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MemberUpsertWithoutMessagesInput = {
-    update: XOR<MemberUpdateWithoutMessagesInput, MemberUncheckedUpdateWithoutMessagesInput>
-    create: XOR<MemberCreateWithoutMessagesInput, MemberUncheckedCreateWithoutMessagesInput>
-    where?: MemberWhereInput
+  export type MembersUpsertWithoutMessagesInput = {
+    update: XOR<MembersUpdateWithoutMessagesInput, MembersUncheckedUpdateWithoutMessagesInput>
+    create: XOR<MembersCreateWithoutMessagesInput, MembersUncheckedCreateWithoutMessagesInput>
+    where?: MembersWhereInput
   }
 
-  export type MemberUpdateToOneWithWhereWithoutMessagesInput = {
-    where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutMessagesInput, MemberUncheckedUpdateWithoutMessagesInput>
+  export type MembersUpdateToOneWithWhereWithoutMessagesInput = {
+    where?: MembersWhereInput
+    data: XOR<MembersUpdateWithoutMessagesInput, MembersUncheckedUpdateWithoutMessagesInput>
   }
 
-  export type MemberUpdateWithoutMessagesInput = {
+  export type MembersUpdateWithoutMessagesInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -12989,7 +12989,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateWithoutMessagesInput = {
+  export type MembersUncheckedUpdateWithoutMessagesInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -13001,7 +13001,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberCreateWithoutConversationsInitiatedInput = {
+  export type MembersCreateWithoutConversationsInitiatedInput = {
     id?: string
     role?: $Enums.MemberRole
     createdAt?: Date | string
@@ -13013,7 +13013,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberUncheckedCreateWithoutConversationsInitiatedInput = {
+  export type MembersUncheckedCreateWithoutConversationsInitiatedInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -13025,12 +13025,12 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberCreateOrConnectWithoutConversationsInitiatedInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutConversationsInitiatedInput, MemberUncheckedCreateWithoutConversationsInitiatedInput>
+  export type MembersCreateOrConnectWithoutConversationsInitiatedInput = {
+    where: MembersWhereUniqueInput
+    create: XOR<MembersCreateWithoutConversationsInitiatedInput, MembersUncheckedCreateWithoutConversationsInitiatedInput>
   }
 
-  export type MemberCreateWithoutConversationsReceivedInput = {
+  export type MembersCreateWithoutConversationsReceivedInput = {
     id?: string
     role?: $Enums.MemberRole
     createdAt?: Date | string
@@ -13042,7 +13042,7 @@ export namespace Prisma {
     conversationsInitiated?: ConversationCreateNestedManyWithoutMemberOneInput
   }
 
-  export type MemberUncheckedCreateWithoutConversationsReceivedInput = {
+  export type MembersUncheckedCreateWithoutConversationsReceivedInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -13054,9 +13054,9 @@ export namespace Prisma {
     conversationsInitiated?: ConversationUncheckedCreateNestedManyWithoutMemberOneInput
   }
 
-  export type MemberCreateOrConnectWithoutConversationsReceivedInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutConversationsReceivedInput, MemberUncheckedCreateWithoutConversationsReceivedInput>
+  export type MembersCreateOrConnectWithoutConversationsReceivedInput = {
+    where: MembersWhereUniqueInput
+    create: XOR<MembersCreateWithoutConversationsReceivedInput, MembersUncheckedCreateWithoutConversationsReceivedInput>
   }
 
   export type DirectMessageCreateWithoutConversationInput = {
@@ -13066,7 +13066,7 @@ export namespace Prisma {
     deleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    member: MemberCreateNestedOneWithoutDirectMessageInput
+    member: MembersCreateNestedOneWithoutDirectMessageInput
   }
 
   export type DirectMessageUncheckedCreateWithoutConversationInput = {
@@ -13089,18 +13089,18 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type MemberUpsertWithoutConversationsInitiatedInput = {
-    update: XOR<MemberUpdateWithoutConversationsInitiatedInput, MemberUncheckedUpdateWithoutConversationsInitiatedInput>
-    create: XOR<MemberCreateWithoutConversationsInitiatedInput, MemberUncheckedCreateWithoutConversationsInitiatedInput>
-    where?: MemberWhereInput
+  export type MembersUpsertWithoutConversationsInitiatedInput = {
+    update: XOR<MembersUpdateWithoutConversationsInitiatedInput, MembersUncheckedUpdateWithoutConversationsInitiatedInput>
+    create: XOR<MembersCreateWithoutConversationsInitiatedInput, MembersUncheckedCreateWithoutConversationsInitiatedInput>
+    where?: MembersWhereInput
   }
 
-  export type MemberUpdateToOneWithWhereWithoutConversationsInitiatedInput = {
-    where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutConversationsInitiatedInput, MemberUncheckedUpdateWithoutConversationsInitiatedInput>
+  export type MembersUpdateToOneWithWhereWithoutConversationsInitiatedInput = {
+    where?: MembersWhereInput
+    data: XOR<MembersUpdateWithoutConversationsInitiatedInput, MembersUncheckedUpdateWithoutConversationsInitiatedInput>
   }
 
-  export type MemberUpdateWithoutConversationsInitiatedInput = {
+  export type MembersUpdateWithoutConversationsInitiatedInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13112,7 +13112,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateWithoutConversationsInitiatedInput = {
+  export type MembersUncheckedUpdateWithoutConversationsInitiatedInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -13124,18 +13124,18 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUpsertWithoutConversationsReceivedInput = {
-    update: XOR<MemberUpdateWithoutConversationsReceivedInput, MemberUncheckedUpdateWithoutConversationsReceivedInput>
-    create: XOR<MemberCreateWithoutConversationsReceivedInput, MemberUncheckedCreateWithoutConversationsReceivedInput>
-    where?: MemberWhereInput
+  export type MembersUpsertWithoutConversationsReceivedInput = {
+    update: XOR<MembersUpdateWithoutConversationsReceivedInput, MembersUncheckedUpdateWithoutConversationsReceivedInput>
+    create: XOR<MembersCreateWithoutConversationsReceivedInput, MembersUncheckedCreateWithoutConversationsReceivedInput>
+    where?: MembersWhereInput
   }
 
-  export type MemberUpdateToOneWithWhereWithoutConversationsReceivedInput = {
-    where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutConversationsReceivedInput, MemberUncheckedUpdateWithoutConversationsReceivedInput>
+  export type MembersUpdateToOneWithWhereWithoutConversationsReceivedInput = {
+    where?: MembersWhereInput
+    data: XOR<MembersUpdateWithoutConversationsReceivedInput, MembersUncheckedUpdateWithoutConversationsReceivedInput>
   }
 
-  export type MemberUpdateWithoutConversationsReceivedInput = {
+  export type MembersUpdateWithoutConversationsReceivedInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13147,7 +13147,7 @@ export namespace Prisma {
     conversationsInitiated?: ConversationUpdateManyWithoutMemberOneNestedInput
   }
 
-  export type MemberUncheckedUpdateWithoutConversationsReceivedInput = {
+  export type MembersUncheckedUpdateWithoutConversationsReceivedInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -13179,8 +13179,8 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    memberOne: MemberCreateNestedOneWithoutConversationsInitiatedInput
-    memberTwo: MemberCreateNestedOneWithoutConversationsReceivedInput
+    memberOne: MembersCreateNestedOneWithoutConversationsInitiatedInput
+    memberTwo: MembersCreateNestedOneWithoutConversationsReceivedInput
   }
 
   export type ConversationUncheckedCreateWithoutDirectMessageInput = {
@@ -13196,7 +13196,7 @@ export namespace Prisma {
     create: XOR<ConversationCreateWithoutDirectMessageInput, ConversationUncheckedCreateWithoutDirectMessageInput>
   }
 
-  export type MemberCreateWithoutDirectMessageInput = {
+  export type MembersCreateWithoutDirectMessageInput = {
     id?: string
     role?: $Enums.MemberRole
     createdAt?: Date | string
@@ -13208,7 +13208,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberUncheckedCreateWithoutDirectMessageInput = {
+  export type MembersUncheckedCreateWithoutDirectMessageInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -13220,9 +13220,9 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedCreateNestedManyWithoutMemberTwoInput
   }
 
-  export type MemberCreateOrConnectWithoutDirectMessageInput = {
-    where: MemberWhereUniqueInput
-    create: XOR<MemberCreateWithoutDirectMessageInput, MemberUncheckedCreateWithoutDirectMessageInput>
+  export type MembersCreateOrConnectWithoutDirectMessageInput = {
+    where: MembersWhereUniqueInput
+    create: XOR<MembersCreateWithoutDirectMessageInput, MembersUncheckedCreateWithoutDirectMessageInput>
   }
 
   export type ConversationUpsertWithoutDirectMessageInput = {
@@ -13240,8 +13240,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberOne?: MemberUpdateOneRequiredWithoutConversationsInitiatedNestedInput
-    memberTwo?: MemberUpdateOneRequiredWithoutConversationsReceivedNestedInput
+    memberOne?: MembersUpdateOneRequiredWithoutConversationsInitiatedNestedInput
+    memberTwo?: MembersUpdateOneRequiredWithoutConversationsReceivedNestedInput
   }
 
   export type ConversationUncheckedUpdateWithoutDirectMessageInput = {
@@ -13252,18 +13252,18 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MemberUpsertWithoutDirectMessageInput = {
-    update: XOR<MemberUpdateWithoutDirectMessageInput, MemberUncheckedUpdateWithoutDirectMessageInput>
-    create: XOR<MemberCreateWithoutDirectMessageInput, MemberUncheckedCreateWithoutDirectMessageInput>
-    where?: MemberWhereInput
+  export type MembersUpsertWithoutDirectMessageInput = {
+    update: XOR<MembersUpdateWithoutDirectMessageInput, MembersUncheckedUpdateWithoutDirectMessageInput>
+    create: XOR<MembersCreateWithoutDirectMessageInput, MembersUncheckedCreateWithoutDirectMessageInput>
+    where?: MembersWhereInput
   }
 
-  export type MemberUpdateToOneWithWhereWithoutDirectMessageInput = {
-    where?: MemberWhereInput
-    data: XOR<MemberUpdateWithoutDirectMessageInput, MemberUncheckedUpdateWithoutDirectMessageInput>
+  export type MembersUpdateToOneWithWhereWithoutDirectMessageInput = {
+    where?: MembersWhereInput
+    data: XOR<MembersUpdateWithoutDirectMessageInput, MembersUncheckedUpdateWithoutDirectMessageInput>
   }
 
-  export type MemberUpdateWithoutDirectMessageInput = {
+  export type MembersUpdateWithoutDirectMessageInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13275,7 +13275,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateWithoutDirectMessageInput = {
+  export type MembersUncheckedUpdateWithoutDirectMessageInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -13296,7 +13296,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MemberCreateManyProfileInput = {
+  export type MembersCreateManyProfileInput = {
     id?: string
     role?: $Enums.MemberRole
     serverId: string
@@ -13320,7 +13320,7 @@ export namespace Prisma {
     inviteCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateManyWithoutServerNestedInput
+    member?: MembersUpdateManyWithoutServerNestedInput
     channels?: ChannelUpdateManyWithoutServerNestedInput
   }
 
@@ -13331,7 +13331,7 @@ export namespace Prisma {
     inviteCode?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUncheckedUpdateManyWithoutServerNestedInput
+    member?: MembersUncheckedUpdateManyWithoutServerNestedInput
     channels?: ChannelUncheckedUpdateManyWithoutServerNestedInput
   }
 
@@ -13344,7 +13344,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MemberUpdateWithoutProfileInput = {
+  export type MembersUpdateWithoutProfileInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13356,7 +13356,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateWithoutProfileInput = {
+  export type MembersUncheckedUpdateWithoutProfileInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -13368,7 +13368,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateManyWithoutProfileInput = {
+  export type MembersUncheckedUpdateManyWithoutProfileInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     serverId?: StringFieldUpdateOperationsInput | string
@@ -13405,7 +13405,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type MemberCreateManyServerInput = {
+  export type MembersCreateManyServerInput = {
     id?: string
     role?: $Enums.MemberRole
     profileId: string
@@ -13422,7 +13422,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type MemberUpdateWithoutServerInput = {
+  export type MembersUpdateWithoutServerInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13434,7 +13434,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateWithoutServerInput = {
+  export type MembersUncheckedUpdateWithoutServerInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     profileId?: StringFieldUpdateOperationsInput | string
@@ -13446,7 +13446,7 @@ export namespace Prisma {
     conversationsReceived?: ConversationUncheckedUpdateManyWithoutMemberTwoNestedInput
   }
 
-  export type MemberUncheckedUpdateManyWithoutServerInput = {
+  export type MembersUncheckedUpdateManyWithoutServerInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumMemberRoleFieldUpdateOperationsInput | $Enums.MemberRole
     profileId?: StringFieldUpdateOperationsInput | string
@@ -13581,7 +13581,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberTwo?: MemberUpdateOneRequiredWithoutConversationsReceivedNestedInput
+    memberTwo?: MembersUpdateOneRequiredWithoutConversationsReceivedNestedInput
     directMessage?: DirectMessageUpdateManyWithoutConversationNestedInput
   }
 
@@ -13604,7 +13604,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    memberOne?: MemberUpdateOneRequiredWithoutConversationsInitiatedNestedInput
+    memberOne?: MembersUpdateOneRequiredWithoutConversationsInitiatedNestedInput
     directMessage?: DirectMessageUpdateManyWithoutConversationNestedInput
   }
 
@@ -13640,7 +13640,7 @@ export namespace Prisma {
     fileUrl?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateOneRequiredWithoutMessagesNestedInput
+    member?: MembersUpdateOneRequiredWithoutMessagesNestedInput
   }
 
   export type MessageUncheckedUpdateWithoutChannelInput = {
@@ -13680,7 +13680,7 @@ export namespace Prisma {
     deleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    member?: MemberUpdateOneRequiredWithoutDirectMessageNestedInput
+    member?: MembersUpdateOneRequiredWithoutDirectMessageNestedInput
   }
 
   export type DirectMessageUncheckedUpdateWithoutConversationInput = {
