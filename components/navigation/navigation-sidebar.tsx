@@ -29,7 +29,7 @@ const NavigationSidebar = async () => {
     <div className="dark:bg-[#1E1F22] bg-[#E3E5E8] w-full flex flex-col items-center h-full text-primary space-y-4 ">
       <NavigationAction />
       <hr className="bg-zinc-300 dark:bg-zinc-700 border-[2px] w-10 rounded-md mx-auto" />
-      <ScrollArea className="flex-1 w-full ">
+      <ScrollArea className="flex-1 w-full">
         {servers.map((server) => (
           <NavigationItem
             key={server.id}

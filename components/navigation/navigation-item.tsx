@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import ActionTooltip from "../action-tooltip";
 
 interface NavigationItemProps {
@@ -13,10 +13,18 @@ interface NavigationItemProps {
 
 const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
   const params = useParams();
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push(`/servers/${id}`);
+  };
 
   return (
     <ActionTooltip label={name} align="center" side="right">
-      <button className="group relative flex items-center justify-center place-self-center">
+      <button
+        onClick={() => onClick()}
+        className="group relative flex items-center justify-center place-self-center mb-4"
+      >
         <div
           className={cn(
             "absolute left-0 rounded-r-md w-[4px] h-full transition-all bg-primary",
