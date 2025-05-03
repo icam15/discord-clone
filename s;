@@ -1,0 +1,35 @@
+[33mcommit 69b7571c9a1110d5f9b7d57685a9cd09ee52d22e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: icam <bianskiza@gmail.com>
+Date:   Fri May 2 15:39:58 2025 +0700
+
+    add initial components
+
+[33mcommit 787a7f4e73c8402d41747f74c7aca4213c7895e2[m
+Author: icam <bianskiza@gmail.com>
+Date:   Thu May 1 20:45:37 2025 +0700
+
+    add prisma connection and create prisma schema
+
+[33mcommit 09dbc40467b1dc508011f8a16cf898238e298ceb[m
+Author: icam <bianskiza@gmail.com>
+Date:   Thu May 1 17:11:00 2025 +0700
+
+    setup dark theme
+
+[33mcommit f50fa5acf4a5912d0d386e1eea294293973587e4[m
+Author: icam <bianskiza@gmail.com>
+Date:   Thu May 1 15:43:56 2025 +0700
+
+    setup authentication with clerk
+
+[33mcommit cc4949bd9e49301bf02d1adbf732344d371860ee[m
+Author: icam <bianskiza@gmail.com>
+Date:   Thu May 1 15:00:39 2025 +0700
+
+    setup environment
+
+[33mcommit 2f0f4fffa656148aee89b2bc4481abd463ad0d43[m
+Author: icam <bianskiza@gmail.com>
+Date:   Thu May 1 14:25:41 2025 +0700
+
+    Initial commit from Create Next App
