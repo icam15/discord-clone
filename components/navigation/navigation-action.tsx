@@ -23,9 +23,10 @@ const NavigationAction = () => {
         overflow-hidden
         group-hover:bg-emerald-500
         text-emerald-500
+        mx-3
         "
           >
-            <Plus className="group-hover:text-white transition" />
+            <Plus className="group-hover:text-white transition" size={25} />
           </div>
         </button>
       </ActionTooltip>
