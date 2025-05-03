@@ -19,7 +19,7 @@ const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
       <button className="group relative flex items-center justify-center place-self-center">
         <div
           className={cn(
-            "absolute left-0 rounded-r-md bg-white w-[4px] h-full transition-all bg-primary",
+            "absolute left-0 rounded-r-md w-[4px] h-full transition-all bg-primary",
             params?.serversId === id ? "h-[80%]" : "h-[20%]",
             params?.serversId !== id && "group-hover:h-[40%]"
           )}
