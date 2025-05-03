@@ -13,7 +13,6 @@ interface FileUplaodProps {
 }
 
 const FileUpload = ({ endPoint, onChange, value }: FileUplaodProps) => {
-  console.log(value);
   const fileType = value?.split("").pop();
 
   if (value && fileType !== "pdf") {
@@ -26,6 +25,7 @@ const FileUpload = ({ endPoint, onChange, value }: FileUplaodProps) => {
           className="rounded-full object-cover"
         />
         <button
+          onClick={() => onChange("")}
           className="
                 absolute
                 top-0
