@@ -1,6 +1,7 @@
 import { currentProflie } from "@/lib/current-profile";
-import ServerHeader from "./server-header";
 import { db } from "@/lib/db";
+import ServerHeader from "./server-header";
+import { redirect } from "next/navigation";
 
 interface ServerSidebarProps {
   serverId: string;
@@ -8,6 +9,10 @@ interface ServerSidebarProps {
 
 const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
   const profile = await currentProflie();
+
+  if (!profile) {
+    return redirect("/");
+  }
 
   const server = await db.server.findUnique({
     where: {
@@ -30,9 +35,17 @@ const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
     },
   });
 
-  const servers = await db.return(
+  if (!server) {
+    return redirect("/");
+  }
+
+  const role = server?.member.find(
+    (member) => member.profileId === profile?.id
+  )?.role;
+
+  return (
     <div className="flex flex-col h-full text-primary w-full  dark:bg-[#2B2D31] bg-[#F2F3F5] ">
-      <ServerHeader />
+      <ServerHeader role={role} server={server} />
     </div>
   );
 };
