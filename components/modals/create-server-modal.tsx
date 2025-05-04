@@ -40,7 +40,7 @@ const formSchema = z.object({
 const CreateServerModal = () => {
   const router = useRouter();
 
-  const { isOpen, onClose } = useModal();
+  const { isOpen, onClose, type } = useModal();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -49,6 +49,8 @@ const CreateServerModal = () => {
       imageUrl: "",
     },
   });
+
+  const isModalOpen = isOpen && type === "createServer";
 
   const isLoading = form.formState.isSubmitting;
 
@@ -69,7 +71,7 @@ const CreateServerModal = () => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={handleClose}>
+    <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
