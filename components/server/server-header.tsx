@@ -44,7 +44,7 @@ const ServerHeader = ({ role, server }: ServerHeaderProps) => {
       <DropdownMenuContent className="w-56 text-xs font-medium dark:bg-neutral-900 space-y-[2px] text-neutral-400">
         {isModerator && (
           <DropdownMenuItem
-            onClick={() => onOpen("invite")}
+            onClick={() => onOpen("invite", { server })}
             className=" text-indigo-500 dark:text-indigo-400 px-3 py-2 cursor-pointer "
           >
             Invite People

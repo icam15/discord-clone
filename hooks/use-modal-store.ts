@@ -1,11 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Server } from "@/lib/generated/prisma";
 import { create } from "zustand";
 
 export type ModalType = "createServer" | "invite" | null;
 
+interface ModalData {
+  server?: Server;
+}
+
 interface ModalStore {
   type: ModalType;
-  data: any;
+  data: ModalData;
   isOpen: boolean;
   onOpen: (type: ModalType, data?: any) => void;
   onClose: () => void;
