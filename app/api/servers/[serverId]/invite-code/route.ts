@@ -13,19 +13,22 @@ export async function PATCH(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    if (!params.serverId) {
+    const serverId = await params.serverId;
+
+    if (serverId) {
       return new NextResponse("Server ID Missing", { status: 400 });
     }
 
     const server = await db.server.update({
       where: {
-        id: params.serverId,
+        id: serverId,
         profileId: profile.id,
       },
       data: {
         inviteCode: uuidv4(),
       },
     });
+    return NextResponse.json(server);
   } catch (error) {
     console.log("[SERVER_ID]", error);
     return new NextResponse("Internal Error", { status: 500 });

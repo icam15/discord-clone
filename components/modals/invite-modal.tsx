@@ -9,16 +9,17 @@ import { Check, Copy, RefreshCcw } from "lucide-react";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { useOrigin } from "@/hooks/use-origin";
+import axios from "axios";
 
 const InviteModal = () => {
-  const { isOpen, type, data, onClose } = useModal();
+  const { isOpen, type, data, onClose, onOpen } = useModal();
 
   const origin = useOrigin();
 
+  const { server } = data;
+
   const [isLoading, setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  const { server } = data;
 
   const isModalOpen = isOpen && type === "invite";
 
@@ -36,6 +37,10 @@ const InviteModal = () => {
   const onNew = async () => {
     try {
       setIsLoading(true);
+      const response = await axios.patch(
+        `/api/servers/${server?.id}/invite-code`
+      );
+      onOpen("invite", { server: response.data });
     } catch (error) {
       console.log(error);
     } finally {
@@ -59,6 +64,7 @@ const InviteModal = () => {
             <div className="w-full bg-zinc-300/50 rounded-sm ">
               <Input
                 value={inviteUrl}
+                onChange={() => {}}
                 className=" border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0 font-semibold"
               />
             </div>
@@ -67,6 +73,7 @@ const InviteModal = () => {
             </Button>
           </div>
           <Button
+            onClick={onNew}
             disabled={isLoading}
             variant="link"
             size="sm"
