@@ -1,6 +1,6 @@
 import { currentProflie } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { redirectToSignIn } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
 
 export async function PATCH(
@@ -11,7 +11,7 @@ export async function PATCH(
     const profile = await currentProflie();
 
     if (!profile) {
-      redirectToSignIn();
+      redirect("/");
     }
 
     const { name, imageUrl } = await req.json();
