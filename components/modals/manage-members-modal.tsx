@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import qs from "query-string";
 
 // ui
 import {
@@ -16,6 +17,7 @@ import {
   Check,
   Copy,
   Gavel,
+  Loader2,
   MoreVertical,
   RefreshCcw,
   Shield,
@@ -50,9 +52,28 @@ const roleIconMap = {
 };
 
 const ManageMembersModal = () => {
-  const { isOpen, type, data, onClose } = useModal();
+  const { isOpen, type, data, onClose, onOpen } = useModal();
 
   const { server } = data as { server: ServerWithMembersWithProfiles };
+
+  const onkickMember = async (memberId: string) => {
+    try {
+      setIsloadingId(memberId);
+      const url = qs.stringifyUrl({
+        url: `/api/members/${memberId}`,
+        query: {
+          serverId: server?.id,
+        },
+      });
+
+      const response = await axios.delete(url);
+      onOpen("manageMembers", { server: response.data });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsloadingId("");
+    }
+  };
 
   const [loadingId, setIsloadingId] = useState("");
 
@@ -116,7 +137,9 @@ const ManageMembersModal = () => {
                           </DropdownMenuPortal>
                         </DropdownMenuSub>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>
+                        <DropdownMenuItem
+                          onClick={() => onkickMember(membe.id)}
+                        >
                           <Gavel className="h-4 w-4 mr-2" />
                           Kick
                         </DropdownMenuItem>
@@ -124,6 +147,9 @@ const ManageMembersModal = () => {
                     </DropdownMenu>
                   </div>
                 )}
+              {loadingId === membe.id && (
+                <Loader2 className="animate-spin text-zinc-500 ml-auto w-4 h-4" />
+              )}
             </div>
           ))}
         </ScrollArea>

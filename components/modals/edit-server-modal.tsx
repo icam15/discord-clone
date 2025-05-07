@@ -53,8 +53,6 @@ const EditServerModal = () => {
 
   const { server } = data;
 
-  console.log(server);
-
   useEffect(() => {
     if (server) {
       form.setValue("name", server.name);
