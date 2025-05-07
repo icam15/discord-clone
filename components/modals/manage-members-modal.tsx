@@ -11,27 +11,20 @@ import {
   DialogTitle,
 } from "../ui/dialog";
 import { useModal } from "@/hooks/use-modal-store";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
 import {
   Check,
-  Copy,
   Gavel,
   Loader2,
   MoreVertical,
-  RefreshCcw,
   Shield,
   ShieldAlert,
   ShieldCheck,
   ShieldQuestion,
 } from "lucide-react";
-import { Button } from "../ui/button";
 import { useState } from "react";
-import { useOrigin } from "@/hooks/use-origin";
 import axios from "axios";
 import { ServerWithMembersWithProfiles } from "@/types";
 import { ScrollArea } from "../ui/scroll-area";
-import { db } from "@/lib/db";
 import UserAvatar from "../user-avatar";
 import {
   DropdownMenu,
@@ -44,6 +37,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 const roleIconMap = {
   GUEST: null,
@@ -53,6 +47,7 @@ const roleIconMap = {
 
 const ManageMembersModal = () => {
   const { isOpen, type, data, onClose, onOpen } = useModal();
+  const router = useRouter();
 
   const { server } = data as { server: ServerWithMembersWithProfiles };
 
@@ -67,6 +62,27 @@ const ManageMembersModal = () => {
       });
 
       const response = await axios.delete(url);
+      router.refresh();
+      onOpen("manageMembers", { server: response.data });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsloadingId("");
+    }
+  };
+
+  const onRoleChange = async (memberId: string, newRole: string) => {
+    try {
+      setIsloadingId(memberId);
+      const url = qs.stringifyUrl({
+        url: `/api/members/${memberId}`,
+        query: {
+          serverId: server?.id,
+        },
+      });
+
+      const response = await axios.patch(url, { role: newRole });
+      router.refresh();
       onOpen("manageMembers", { server: response.data });
     } catch (error) {
       console.log(error);
@@ -119,14 +135,20 @@ const ManageMembersModal = () => {
                           </DropdownMenuSubTrigger>
                           <DropdownMenuPortal>
                             <DropdownMenuSubContent>
-                              <DropdownMenuItem>
+                              <DropdownMenuItem
+                                onClick={() => onRoleChange(membe.id, "GUEST")}
+                              >
                                 <Shield className="h-4 w-4 mr-2" />
                                 Guest
                                 {membe.role === "GUEST" && (
                                   <Check className="h-4 w-4 ml-auto" />
                                 )}
                               </DropdownMenuItem>
-                              <DropdownMenuItem>
+                              <DropdownMenuItem
+                                onClick={() =>
+                                  onRoleChange(membe.id, "MODERATOR")
+                                }
+                              >
                                 <ShieldCheck className="h-4 w-4 mr-2" />
                                 Moderator
                                 {membe.role === "MODERATOR" && (

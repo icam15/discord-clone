@@ -29,7 +29,7 @@ interface ServerHeaderProps {
 
 const ServerHeader = ({ role, server }: ServerHeaderProps) => {
   const isAdmin = role === MemberRole.ADMIN;
-  const isModerator = isAdmin || MemberRole.MODERATOR;
+  const isModerator = isAdmin || role === MemberRole.MODERATOR;
 
   const { onOpen } = useModal();
 
