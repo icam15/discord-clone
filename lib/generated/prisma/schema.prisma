@@ -58,7 +58,7 @@ model Members {
   role MemberRole @default(GUEST)
 
   serverId String
-  server   Server @relation(fields: [serverId], references: [id])
+  server   Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
   profileId String
   profile   Profile @relation(fields: [profileId], references: [id])
@@ -85,7 +85,7 @@ model Channel {
   type ChannelType @default(TEXT)
 
   serverId String
-  server   Server @relation(fields: [serverId], references: [id])
+  server   Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
   profileId String
   profile   Profile @relation(fields: [profileId], references: [id])
